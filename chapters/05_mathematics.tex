@@ -1,0 +1,440 @@
+% =============================================================================
+%  CHAPTER 5: Mathematics
+% =============================================================================
+
+\chapter{Mathematics}
+
+\latex{} is renowned for its mathematical typesetting. This chapter covers everything from basic inline formulas to advanced constructs.
+
+% ------------------------------------------------------------------
+\section{Math Modes}
+
+There are several ways to enter math mode:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Type} & \textbf{Syntax} & \textbf{Usage} \\
+\midrule
+Inline math   & \verb|$...$|            & $E=mc^2$ in text \\
+Display math  & \verb|\[...\]|          & Centered, numbered \\
+Equation env  & \verb|\begin{equation}| & Centered, numbered \\
+Align env     & \verb|\begin{align}|    & Multi-line aligned \\
+\bottomrule
+\end{tabular}
+\caption{Math mode entry points}
+\end{table}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Math modes]
+% Inline: the formula flows with text
+The energy is $E = mc^2$ according to Einstein.
+
+% Display: the formula is centered on its own line
+\[ E = mc^2 \]
+
+% Equation: like display but with a number
+\begin{equation}
+    E = mc^2 \label{eq:einstein}
+\end{equation}
+
+% Starred version: no number
+\begin{equation*}
+    E = mc^2
+\end{equation*}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Superscripts and Subscripts}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Superscripts and subscripts]
+$x^2$              % Superscript: x squared
+$x_i$              % Subscript: x sub i
+$x_i^2$            % Both: x sub i squared
+$x_{i,j}$          % Multi-character subscript: need braces
+$a^{b^c}$          % Nested superscript
+$2^{10} = 1024$    % Powers
+\end{lstlisting}
+
+Results: $x^2$, \quad $x_i$, \quad $x_i^2$, \quad $x_{i,j}$, \quad $a^{b^c}$, \quad $2^{10} = 1024$
+
+% ------------------------------------------------------------------
+\section{Fractions}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Fractions]
+$\frac{a}{b}$                          % Basic fraction
+$\dfrac{a}{b}$                         % Display-style fraction
+$\tfrac{a}{b}$                         % Text-style fraction
+$\cfrac{1}{1+\cfrac{1}{2}}$           % Continued fraction
+$\binom{n}{k}$                         % Binomial coefficient
+\end{lstlisting}
+
+Results: $\frac{a}{b}$, \quad $\dfrac{a}{b}$, \quad $\cfrac{1}{1+\cfrac{1}{2}}$, \quad $\binom{n}{k}$
+
+% ------------------------------------------------------------------
+\section{Roots}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Roots]
+$\sqrt{x}$            % Square root
+$\sqrt[3]{x}$         % Cube root
+$\sqrt[n]{x}$         % nth root
+$\sqrt{a^2 + b^2}$    % Complex expression
+\end{lstlisting}
+
+Results: $\sqrt{x}$, \quad $\sqrt[3]{x}$, \quad $\sqrt[n]{x}$, \quad $\sqrt{a^2 + b^2}$
+
+% ------------------------------------------------------------------
+\section{Sums, Products, Integrals}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Big operators]
+$\sum_{i=1}^{n} x_i$         % Summation
+$\prod_{i=1}^{n} x_i$        % Product
+$\int_{a}^{b} f(x) dx$       % Definite integral
+$\iint_{D} f(x,y) dA$        % Double integral
+$\iiint_{V} f(x,y,z) dV$     % Triple integral
+$\oint_{C} F \cdot dr$       % Contour integral
+$\lim_{x \to \infty} f(x)$  % Limit
+$\sup_{x \in S} f(x)$       % Supremum
+$\max_{x \in S} f(x)$       % Maximum
+$\min_{x \in S} f(x)$       % Minimum
+\end{lstlisting}
+
+Display style results:
+\[ \sum_{i=1}^{n} x_i \qquad \prod_{i=1}^{n} x_i \qquad \int_{a}^{b} f(x)\,dx \qquad \lim_{x \to \infty} f(x) \]
+
+% ------------------------------------------------------------------
+\section{Greek Letters}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Command} & \textbf{Result} & \textbf{Command} & \textbf{Result} \\
+\midrule
+\verb|\alpha|     & $\alpha$     & \verb|\Alpha|     & $A$ \\
+\verb|\beta|      & $\beta$      & \verb|\gamma|     & $\gamma$ \\
+\verb|\delta|     & $\delta$     & \verb|\epsilon|   & $\epsilon$ \\
+\verb|\varepsilon|& $\varepsilon$& \verb|\zeta|      & $\zeta$ \\
+\verb|\eta|       & $\eta$       & \verb|\theta|     & $\theta$ \\
+\verb|\iota|      & $\iota$      & \verb|\kappa|     & $\kappa$ \\
+\verb|\lambda|    & $\lambda$    & \verb|\mu|        & $\mu$ \\
+\verb|\nu|        & $\nu$        & \verb|\xi|        & $\xi$ \\
+\verb|\pi|        & $\pi$        & \verb|\rho|       & $\rho$ \\
+\verb|\sigma|     & $\sigma$     & \verb|\tau|       & $\tau$ \\
+\verb|\upsilon|   & $\upsilon$   & \verb|\phi|       & $\phi$ \\
+\verb|\varphi|    & $\varphi$    & \verb|\chi|       & $\chi$ \\
+\verb|\psi|       & $\psi$       & \verb|\omega|     & $\omega$ \\
+\midrule
+\verb|\Gamma|     & $\Gamma$     & \verb|\Delta|     & $\Delta$ \\
+\verb|\Theta|     & $\Theta$     & \verb|\Lambda|    & $\Lambda$ \\
+\verb|\Xi|        & $\Xi$        & \verb|\Pi|        & $\Pi$ \\
+\verb|\Sigma|     & $\Sigma$     & \verb|\Phi|       & $\Phi$ \\
+\verb|\Psi|       & $\Psi$       & \verb|\Omega|     & $\Omega$ \\
+\bottomrule
+\end{tabular}
+\caption{Greek letters}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Mathematical Operators and Functions}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Math operators]
+$\sin x$     $\cos x$     $\tan x$
+$\arcsin x$  $\arccos x$  $\arctan x$
+$\sinh x$    $\cosh x$    $\tanh x$
+$\ln x$      $\log x$     $\exp x$
+$\det A$     $\dim V$     $\ker f$
+$\deg f$     $\gcd(a,b)$  $\hom(A,B)$
+$\inf S$     $\sup S$     $\max S$
+$\min S$     $\lim f$     $\limsup f$
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Relations and Binary Operators}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Command} & \textbf{Symbol} & \textbf{Command} & \textbf{Symbol} \\
+\midrule
+\verb|<|      & $<$      & \verb|>|       & $>$ \\
+\verb|\leq|   & $\leq$   & \verb|\geq|    & $\geq$ \\
+\verb|\neq|   & $\neq$   & \verb|\approx| & $\approx$ \\
+\verb|\equiv| & $\equiv$ & \verb|\sim|    & $\sim$ \\
+\verb|\propto|& $\propto$& \verb|\ll|     & $\ll$ \\
+\verb|\gg|    & $\gg$    & \verb|\in|     & $\in$ \\
+\verb|\subset|& $\subset$& \verb|\supset| & $\supset$ \\
+\verb|\subseteq| & $\subseteq$ & \verb|\supseteq| & $\supseteq$ \\
+\verb|\cup|   & $\cup$   & \verb|\cap|    & $\cap$ \\
+\verb|\setminus| & $\setminus$ & \verb|\emptyset| & $\emptyset$ \\
+\verb|\pm|    & $\pm$    & \verb|\mp|     & $\mp$ \\
+\verb|\times| & $\times$ & \verb|\div|    & $\div$ \\
+\verb|\cdot|  & $\cdot$  & \verb|\circ|   & $\circ$ \\
+\verb|\otimes|& $\otimes$& \verb|\oplus|  & $\oplus$ \\
+\bottomrule
+\end{tabular}
+\caption{Common mathematical symbols}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Arrows}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Command} & \textbf{Arrow} & \textbf{Command} & \textbf{Arrow} \\
+\midrule
+\verb|\leftarrow|      & $\leftarrow$      & \verb|\rightarrow|     & $\rightarrow$ \\
+\verb|\Leftarrow|      & $\Leftarrow$      & \verb|\Rightarrow|     & $\Rightarrow$ \\
+\verb|\leftrightarrow| & $\leftrightarrow$ & \verb|\Leftrightarrow| & $\Leftrightarrow$ \\
+\verb|\mapsto|         & $\mapsto$         & \verb|\longmapsto|     & $\longmapsto$ \\
+\verb|\uparrow|        & $\uparrow$        & \verb|\downarrow|      & $\downarrow$ \\
+\verb|\nearrow|        & $\nearrow$        & \verb|\searrow|        & $\searrow$ \\
+\bottomrule
+\end{tabular}
+\caption{Arrow symbols}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Matrices}
+
+The \texttt{amsmath} package provides several matrix environments:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Matrices]
+% Parentheses: ( )
+\begin{pmatrix}
+    a & b \\
+    c & d
+\end{pmatrix}
+
+% Brackets: [ ]
+\begin{bmatrix}
+    a & b \\
+    c & d
+\end{bmatrix}
+
+% Braces: { }
+\begin{Bmatrix}
+    a & b \\
+    c & d
+\end{Bmatrix}
+
+% Vertical bars: | |
+\begin{vmatrix}
+    a & b \\
+    c & d
+\end{vmatrix}
+
+% Double vertical bars: || ||
+\begin{Vmatrix}
+    a & b \\
+    c & d
+\end{Vmatrix}
+
+% No delimiters
+\begin{matrix}
+    a & b \\
+    c & d
+\end{matrix}
+
+% With dots:
+\begin{pmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}
+\end{lstlisting}
+
+Results:
+\[
+\begin{pmatrix} a & b \\ c & d \end{pmatrix}
+\quad
+\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
+\quad
+\begin{vmatrix} a & b \\ c & d \end{vmatrix}
+\]
+
+\[
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}
+\]
+
+% ------------------------------------------------------------------
+\section{Multi-line Equations (align)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=align environment]
+\begin{align}
+    f(x) &= x^2 + 2x + 1 \\
+         &= (x+1)^2 \\
+         &= x^2 + 2x + 1 \label{eq:expand}
+\end{align}
+
+% align without numbering:
+\begin{align*}
+    f(x) &= x^2 + 2x + 1 \\
+         &= (x+1)^2
+\end{align*}
+
+% Number specific lines only:
+\begin{align}
+    f(x) &= x^2 + 2x + 1 \nonumber \\
+         &= (x+1)^2 \\
+         &= x^2 + 2x + 1 \nonumber
+\end{align}
+
+% Multiple alignment columns:
+\begin{align*}
+    x &= 1  &  y &= 2  &  z &= 3 \\
+    x' &= 4 &  y' &= 5 &  z' &= 6
+\end{align*}
+\end{lstlisting}
+
+Result:
+\begin{align}
+    f(x) &= x^2 + 2x + 1 \label{eq:quadratic} \\
+         &= (x+1)^2 \nonumber
+\end{align}
+
+% ------------------------------------------------------------------
+\section{Cases and Piecewise Functions}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=cases environment]
+\begin{equation}
+    |x| =
+    \begin{cases}
+        x  & \text{if } x \geq 0 \\
+        -x & \text{if } x < 0
+    \end{cases}
+\end{equation}
+\end{lstlisting}
+
+Result:
+\begin{equation}
+    |x| =
+    \begin{cases}
+        x  & \text{if } x \geq 0 \\
+        -x & \text{if } x < 0
+    \end{cases}
+\end{equation}
+
+% ------------------------------------------------------------------
+\section{Accents in Math Mode}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Command} & \textbf{Result} & \textbf{Name} \\
+\midrule
+\verb|\hat{a}|     & $\hat{a}$     & Hat \\
+\verb|\bar{a}|     & $\bar{a}$     & Bar \\
+\verb|\tilde{a}|   & $\tilde{a}$   & Tilde \\
+\verb|\vec{a}|     & $\vec{a}$     & Vector arrow \\
+\verb|\dot{a}|     & $\dot{a}$     & Dot \\
+\verb|\ddot{a}|    & $\ddot{a}$    & Double dot \\
+\verb|\vec{a}|     & $\vec{a}$     & Vector \\
+\verb|\widehat{abc}|& $\widehat{abc}$& Wide hat \\
+\verb|\widetilde{abc}|& $\widetilde{abc}$& Wide tilde \\
+\verb|\overline{abc}| & $\overline{abc}$ & Overline \\
+\verb|\underline{abc}| & $\underline{abc}$ & Underline \\
+\verb|\overbrace{abc}| & $\overbrace{abc}$ & Overbrace \\
+\verb|\underbrace{abc}|& $\underbrace{abc}$& Underbrace \\
+\bottomrule
+\end{tabular}
+\caption{Math accents}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Spacing in Math Mode}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Command} & \textbf{Space} & \textbf{Example} \\
+\midrule
+\verb|\,|     & Thin space      & $a\,b$ \\
+\verb|\:|     & Medium space    & $a\:b$ \\
+\verb|\;|     & Thick space     & $a\;b$ \\
+\verb|\!|     & Negative thin   & $a\!b$ \\
+\verb|\quad|  & 1em space       & $a\quad b$ \\
+\verb|\qquad| & 2em space       & $a\qquad b$ \\
+\verb|\,|     & & $ab$ (no space for comparison) \\
+\bottomrule
+\end{tabular}
+\caption{Math spacing commands}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Text Inside Math Mode}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Text in math]
+$\text{for all } x > 0$           % Regular text in math
+$\text{if and only if}$            % Using amsmath \text
+$\mathrm{d}x$                      % Upright d for differentials
+$\text{Area} = \pi r^2$            % Upright labels
+$\text{let } n = 5$                % Mixed text and math
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Theorems and Proofs}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Theorem environments]
+% In preamble (amsthm package):
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+% In document:
+\begin{theorem}[Pythagorean]
+For a right triangle: $a^2 + b^2 = c^2$.
+\end{theorem}
+
+\begin{proof}
+By construction of squares on each side...
+\end{proof}
+\end{lstlisting}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\begin{theorem}[Pythagorean]
+For a right triangle with legs $a$, $b$ and hypotenuse $c$:
+\[ a^2 + b^2 = c^2 \]
+\end{theorem}
+
+\begin{proof}
+Left as an exercise for the reader.
+\end{proof}
+
+\begin{definition}
+A \textbf{prime number} is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+\end{definition}
+
+% ------------------------------------------------------------------
+\section{Comprehensive Math Example}
+
+\begin{equation}
+    \int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+    \label{eq:gaussian}
+\end{equation}
+
+\begin{equation}
+    e^{i\pi} + 1 = 0
+    \label{eq:euler}
+\end{equation}
+
+The Gaussian integral (\ref{eq:gaussian}) and Euler's identity (\ref{eq:euler}) are two of the most beautiful equations in mathematics.

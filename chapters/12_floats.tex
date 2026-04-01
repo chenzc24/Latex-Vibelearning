@@ -1,0 +1,152 @@
+% =============================================================================
+%  CHAPTER 12: Floating Bodies & Captions
+% =============================================================================
+
+\chapter{Floating Bodies \& Captions}
+
+\section{What Are Floats?}
+
+Floats are objects (figures, tables) that \latex{} places at optimal positions in the document, rather than exactly where they appear in the source code.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Environment} & \textbf{Content} \\
+\midrule
+\texttt{figure}   & Images, diagrams \\
+\texttt{table}    & Tables \\
+\texttt{algorithm} & Algorithms (with algorithm package) \\
+\texttt{listing}  & Code listings (with listings package) \\
+\bottomrule
+\end{tabular}
+\caption{Float environments}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Placement Specifiers}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llp{8cm}}
+\toprule
+\textbf{Specifier} & \textbf{Meaning} & \textbf{Notes} \\
+\midrule
+\texttt{h} & Here       & Approximately at the current location \\
+\texttt{t} & Top        & At the top of the page \\
+\texttt{b} & Bottom     & At the bottom of the page \\
+\texttt{p} & Page       & On a separate float page \\
+\texttt{!} & Override   & Override LaTeX's internal placement rules \\
+\texttt{H} & HERE       & Exactly here (requires \texttt{float} package) \\
+\bottomrule
+\end{tabular}
+\caption{Float placement specifiers}
+\end{table}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Float placement]
+\begin{figure}[htbp]     % Try here, top, bottom, then page
+    ...
+\end{figure}
+
+\begin{figure}[H]        % Exactly here (float package)
+    ...
+\end{figure}
+
+\begin{table}[!ht]       % Override rules, try here then top
+    ...
+\end{table}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Captions}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Captions]
+% Caption below the content (typical for figures):
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=5cm]{image}
+    \caption{This is a figure caption.}
+    \label{fig:myfigure}
+\end{figure}
+
+% Caption above the content (typical for tables):
+\begin{table}[htbp]
+    \centering
+    \caption{This is a table caption.}
+    \label{tab:mytable}
+    \begin{tabular}{lc}
+        ...
+    \end{tabular}
+\end{table}
+\end{lstlisting}
+
+\subsection{Caption Styles (caption package)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Caption customization]
+\usepackage{caption}
+
+% Change label separator:
+\captionsetup{labelsep=period}   % Figure 1. Caption text
+\captionsetup{labelsep=quad}     % Figure 1    Caption text
+\captionsetup{labelsep=newline}  % Label on separate line
+\captionsetup{labelsep=none}     % No label
+
+% Font options:
+\captionsetup{font=small}
+\captionsetup{font=it}
+\captionsetup{labelfont=bf}
+
+% Justification:
+\captionsetup{justification=centering}
+\captionsetup{justification=raggedright}
+\captionsetup{justification=justified}
+
+% Per-environment:
+\captionsetup[figure]{font=small, labelfont=bf}
+\captionsetup[table]{font=small, skip=5pt}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Side Captions}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Side captions]
+\usepackage{sidecap}
+
+\begin{SCfigure}
+    \includegraphics[width=5cm]{image}
+    \caption{Caption appears beside the figure.}
+\end{SCfigure}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Float Barriers}
+
+Sometimes floats drift too far from their reference. Use barriers to control this:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Float barriers]
+\usepackage{placeins}
+
+% Force all pending floats to be placed before this point:
+\FloatBarrier
+
+% Use in a section command:
+\makeatletter
+\AtBeginSection{\FloatBarrier}
+\makeatother
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Controlling Float Counters}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Float counters]
+% Maximum floats per page:
+\renewcommand{\topfraction}{0.9}     % Max fraction of page for top floats
+\renewcommand{\bottomfraction}{0.9}  % Max fraction for bottom floats
+\renewcommand{\textfraction}{0.05}   % Min fraction for text
+\renewcommand{\floatpagefraction}{0.8} % Min fraction of floats for float page
+
+% Maximum number of floats:
+\setcounter{topnumber}{4}            % Max top floats per page
+\setcounter{bottomnumber}{4}         % Max bottom floats per page
+\setcounter{totalnumber}{10}         % Max total floats per page
+\end{lstlisting}

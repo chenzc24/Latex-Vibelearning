@@ -1,0 +1,277 @@
+% =============================================================================
+%  CHAPTER 15: Advanced Topics
+% =============================================================================
+
+\chapter{Advanced Topics}
+
+\section{Tables of Contents for Non-Standard Sections}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Custom TOC entries]
+% Add unnumbered chapter to TOC:
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+% Custom TOC depth:
+\setcounter{tocdepth}{2}     % Show sections and subsections only
+\setcounter{secnumdepth}{3}  % Number up to subsubsection
+
+% Mini table of contents per chapter (minitoc package):
+\usepackage{minitoc}
+\dominitoc                      % In preamble, after \tableofcontents
+\chapter{My Chapter}
+\minitoc                        % Shows TOC for this chapter only
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Index}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Index]
+\usepackage{makeidx}
+\makeindex                       % In preamble
+
+% Mark entries:
+\index{keyword}
+\index{main topic!subtopic}     % Nested index entry
+\index{term|textbf}             % Bold page reference
+
+% Special characters:
+\index{keyword@\texttt{keyword}}  % Custom sort vs display
+
+% Print the index:
+\printindex                      % At end of document
+
+% Compilation:
+% pdflatex main.tex
+% makeindex main
+% pdflatex main.tex
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Glossary / Acronyms}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Glossary]
+\usepackage[acronym, toc]{glossaries}
+\makeglossaries
+
+% Define terms:
+\newglossaryentry{latex}{
+    name=LaTeX,
+    description={A document preparation system}
+}
+
+\newacronym{api}{API}{Application Programming Interface}
+
+% Use in text:
+\gls{latex}         % First: "LaTeX (A document preparation system)"
+                     % Later: "LaTeX"
+\gls{api}           % First: "Application Programming Interface (API)"
+                     % Later: "API"
+\Gls{latex}         % Capitalized first letter
+
+% Print glossary:
+\printglossary[type=main]          % Glossary
+\printglossary[type=\acronymtype]  % Acronyms
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Watermarks}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Watermark]
+\usepackage[firstpage]{draftwatermark}
+\SetWatermarkText{CONFIDENTIAL}
+\SetWatermarkScale{3}
+\SetWatermarkColor[gray]{0.9}
+\SetWatermarkAngle{45}
+
+% Or with wallpaper package for images:
+\usepackage{wallpaper}
+\ThisCenterWallPaper{0.5}{logo.png}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Conditional Compilation}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Conditional compilation]
+% Define a flag:
+\newif\ifdraft
+\drafttrue          % Set to draft mode
+% \draftfalse       % Set to final mode
+
+% Use conditionally:
+\ifdraft
+    \usepackage[draft]{graphicx}  % Show image boxes only
+\else
+    \usepackage{graphicx}         % Full images
+\fi
+
+% Include content conditionally:
+\ifdraft
+    \include{chapters/draft-notes}
+\fi
+
+% Version control:
+\newcommand{\version}{1.0}
+\newcommand{\releasedate}{2024-01-01}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{External Files and Shell Escape}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=File operations]
+% Read from external file:
+\input{data/variables.tex}        % Insert file content
+
+% Write to file (during compilation):
+\newwrite\myoutput
+\immediate\openout\myoutput=output.txt
+\immediate\write\myoutput{Hello from LaTeX}
+\immediate\closeout\myoutput
+
+% Shell escape (compile with --shell-escape):
+% \write18{date > date.txt}
+% \input{date.txt}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Compilation Tools}
+
+\subsection{latexmk}
+
+\begin{lstlisting}[caption=latexmk automation]
+# latexmk automates multi-pass compilation:
+latexmk -pdf main.tex              % Compile to PDF
+latexmk -xelatex main.tex          % Use XeLaTeX
+latexmk -lualatex main.tex         % Use LuaLaTeX
+latexmk -c                         % Clean auxiliary files
+latexmk -C                         % Clean all (including PDF)
+latexmk -pvc main.tex              % Preview continuously (live reload)
+\end{lstlisting}
+
+\subsection{Compilation Engines}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Engine} & \textbf{Command} & \textbf{Best For} \\
+\midrule
+pdfLaTeX  & \texttt{pdflatex}  & Standard documents, English \\
+XeLaTeX   & \texttt{xelatex}   & Unicode, system fonts \\
+LuaLaTeX  & \texttt{lualatex}  & Advanced scripting, Lua integration \\
+\bottomrule
+\end{tabular}
+\caption{\latex{} compilation engines}
+\end{table}
+
+\subsection{Using System Fonts (XeLaTeX/LuaLaTeX)}
+
+\begin{lstlisting}[caption=System fonts with fontspec]
+% Requires XeLaTeX or LuaLaTeX
+\usepackage{fontspec}
+
+% Set main font:
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}
+
+% With options:
+\setmainfont[
+    BoldFont=Times New Roman Bold,
+    ItalicFont=Times New Roman Italic,
+    Scale=1.0
+]{Times New Roman}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Beamer Presentations (Overview)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Beamer basics]
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title{My Presentation}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\begin{frame}{My First Slide}
+    \begin{itemize}
+        \item First point
+        \item Second point
+    \end{itemize}
+\end{frame}
+
+% Columns:
+\begin{frame}{Two Columns}
+    \begin{columns}
+        \column{0.5\textwidth}
+            Left content
+        \column{0.5\textwidth}
+            Right content
+    \end{columns}
+\end{frame}
+
+% Overlays (step-by-step reveal):
+\begin{frame}{Overlays}
+    \begin{itemize}
+        \item<1-> First (appears on slide 1+)
+        \item<2-> Second (appears on slide 2+)
+        \item<3-> Third (appears on slide 3+)
+    \end{itemize}
+\end{frame}
+\end{document}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Multilingual Support}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Multilingual documents]
+% With babel:
+\usepackage[english, french, german]{babel}
+% Last language is default. Switch:
+\selectlanguage{french}
+\selectlanguage{english}
+
+% With polyglossia (XeLaTeX/LuaLaTeX):
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{french}
+\setotherlanguage{german}
+
+\begin{german}
+    Hallo Welt!
+\end{german}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Error Handling}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lp{8cm}}
+\toprule
+\textbf{Error} & \textbf{Common Cause} \\
+\midrule
+\texttt{Undefined control sequence} & Misspelled command or missing package \\
+\texttt{Missing \$ inserted}       & Used math symbol outside math mode \\
+\texttt{Extra alignment tab}       & Too many \texttt{\&} in table row \\
+\texttt{Missing \} inserted}       & Unmatched braces \\
+\texttt{Float too large}           & Figure/table wider than text area \\
+\texttt{Overfull \textbackslash hbox} & Text extends past margin \\
+\texttt{Underfull \textbackslash hbox} & Too much whitespace in line \\
+\bottomrule
+\end{tabular}
+\caption{Common \latex{} errors}
+\end{table}
+
+\note{Always read the \texttt{.log} file for detailed error information. The first error reported is usually the root cause.}

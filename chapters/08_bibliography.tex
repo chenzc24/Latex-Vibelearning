@@ -1,0 +1,246 @@
+% =============================================================================
+%  CHAPTER 8: Bibliography & Citations
+% =============================================================================
+
+\chapter{Bibliography \& Citations}
+
+\section{Basic Bibliography with thebibliography}
+
+The simplest way to create a bibliography is using the \texttt{thebibliography} environment directly.
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=thebibliography environment]
+% At the end of your document (before \end{document}):
+\begin{thebibliography}{9}
+    \bibitem{knuth1984}
+        Donald E. Knuth,
+        \textit{The TeXbook},
+        Addison-Wesley, 1984.
+
+    \bibitem{lamport1994}
+        Leslie Lamport,
+        \textit{LaTeX: A Document Preparation System},
+        Addison-Wesley, 2nd edition, 1994.
+
+    \bibitem{mittelbach2004}
+        Frank Mittelbach and Michel Goossens,
+        \textit{The LaTeX Companion},
+        Addison-Wesley, 2nd edition, 2004.
+\end{thebibliography}
+
+% Cite in text:
+Knuth wrote the original TeX system~\cite{knuth1984}.
+LaTeX was created by Lamport~\cite{lamport1994}.
+\end{lstlisting}
+
+\subsection{Citation Commands}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Command} & \textbf{Output} & \textbf{Description} \\
+\midrule
+\verb|\cite{key}|         & [1]          & Basic citation \\
+\verb|\cite[p.42]{key}|   & [1, p.42]    & With page number \\
+\verb|\cite{a,b,c}|       & [1,2,3]      & Multiple citations \\
+\bottomrule
+\end{tabular}
+\caption{Basic citation commands}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{BibTeX with .bib Files}
+
+For larger projects, use a \texttt{.bib} file to manage references.
+
+\subsection{The .bib File}
+
+\begin{lstlisting}[caption=Sample .bib file (references.bib)]
+@article{einstein1905,
+    author  = {Albert Einstein},
+    title   = {On the Electrodynamics of Moving Bodies},
+    journal = {Annalen der Physik},
+    year    = {1905},
+    volume  = {322},
+    number  = {10},
+    pages   = {891--921},
+    doi     = {10.1002/andp.19053221004}
+}
+
+@book{knuth1984,
+    author    = {Donald E. Knuth},
+    title     = {The TeXbook},
+    publisher = {Addison-Wesley},
+    year      = {1984},
+    isbn      = {978-0201134483}
+}
+
+@inproceedings{lamport1998,
+    author    = {Leslie Lamport},
+    title     = {The Part-Time Parliament},
+    booktitle = {ACM Transactions on Computer Systems},
+    year      = {1998},
+    volume    = {16},
+    number    = {2},
+    pages     = {133--169}
+}
+
+@online{overleaf2024,
+    author  = {{Overleaf}},
+    title   = {Documentation},
+    year    = {2024},
+    url     = {https://www.overleaf.com/learn}
+}
+
+@phdthesis{smith2020,
+    author = {Jane Smith},
+    title  = {Advanced Topics in Computer Science},
+    school = {MIT},
+    year   = {2020}
+}
+\end{lstlisting}
+
+\subsection{Entry Types}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Type} & \textbf{Used For} \\
+\midrule
+\texttt{@article}       & Journal articles \\
+\texttt{@book}          & Books \\
+\texttt{@booklet}       & Booklets / pamphlets \\
+\texttt{@inbook}        & A chapter or section in a book \\
+\texttt{@incollection}  & A chapter in a collected works \\
+\texttt{@inproceedings} & Conference papers \\
+\texttt{@manual}        & Technical documentation \\
+\texttt{@mastersthesis} & Master's thesis \\
+\texttt{@misc}          & Miscellaneous \\
+\texttt{@phdthesis}     & PhD thesis \\
+\texttt{@proceedings}   & Conference proceedings \\
+\texttt{@techreport}    & Technical reports \\
+\texttt{@unpublished}   & Unpublished works \\
+\texttt{@online}        & Web resources \\
+\bottomrule
+\end{tabular}
+\caption{BibTeX entry types}
+\end{table}
+
+\subsection{Common Fields}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Field} & \textbf{Required} & \textbf{Description} \\
+\midrule
+\texttt{author}    & Most entries & Author names \\
+\texttt{title}     & Most entries & Title of work \\
+\texttt{year}      & Most entries & Year of publication \\
+\texttt{publisher} & book, inbook & Publisher name \\
+\texttt{journal}   & article      & Journal name \\
+\texttt{volume}    & article      & Volume number \\
+\texttt{number}    & article      & Issue number \\
+\texttt{pages}     & article      & Page range \\
+\texttt{doi}       & Optional     & Digital Object Identifier \\
+\texttt{url}       & Optional     & URL to resource \\
+\texttt{isbn}      & Optional     & ISBN number \\
+\texttt{abstract}  & Optional     & Abstract text \\
+\texttt{keywords}  & Optional     & Keywords \\
+\bottomrule
+\end{tabular}
+\caption{Common BibTeX fields}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Using BibTeX}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Using BibTeX]
+% In your .tex file, at the end:
+\bibliographystyle{plain}    % Choose a style
+\bibliography{references}    % Name of .bib file (without .bib)
+
+% Compilation steps:
+% 1. pdflatex main.tex      (first pass)
+% 2. bibtex main             (process citations)
+% 3. pdflatex main.tex      (second pass)
+% 4. pdflatex main.tex      (third pass for references)
+\end{lstlisting}
+
+\subsection{Bibliography Styles}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Style} & \textbf{Description} \\
+\midrule
+\texttt{plain}    & Alphabetical by author, numbered [1] \\
+\texttt{unsrt}    & Same as plain, but in order of citation \\
+\texttt{alpha}    & Labels like [Knu84] (author-year abbrev.) \\
+\texttt{abbrv}    & Like plain, with abbreviated first names \\
+\texttt{ieeetr}   & IEEE Transactions style \\
+\texttt{acm}      & ACM style \\
+\texttt{apalike}  & APA-like style (author, year) \\
+\bottomrule
+\end{tabular}
+\caption{Common bibliography styles}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Biblatex (Modern Approach)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=biblatex package]
+% In preamble:
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+% In document body:
+As shown by~\textcite{einstein1905}...
+According to~\autocite{knuth1984}...
+
+% At end of document:
+\printbibliography
+
+% Or with a title:
+\printbibliography[title={Works Cited}]
+
+% Or filter by type:
+\printbibliography[type=article, title={Journal Articles}]
+\printbibliography[type=book, title={Books}]
+
+% Citation commands unique to biblatex:
+\cite{key}           % [1]
+\parencite{key}      % (Author, Year)
+\textcite{key}       % Author (Year)
+\autocite{key}       % Depends on style
+\footcite{key}       % Footnote citation
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Example Bibliography}
+
+Here is a working example with inline references:
+
+\begin{thebibliography}{9}
+    \bibitem{knuth1984}
+        Donald E. Knuth,
+        \textit{The \TeX{}book},
+        Addison-Wesley, 1984.
+
+    \bibitem{lamport1994}
+        Leslie Lamport,
+        \textit{\LaTeX: A Document Preparation System},
+        Addison-Wesley, 2nd edition, 1994.
+
+    \bibitem{mittelbach2004}
+        Frank Mittelbach and Michel Goossens,
+        \textit{The \LaTeX{} Companion},
+        Addison-Wesley, 2nd edition, 2004.
+
+    \bibitem{overleaf2024}
+        Overleaf,
+        \textit{Learn \LaTeX{} in 30 Minutes},
+        \url{https://www.overleaf.com/learn}, 2024.
+\end{thebibliography}

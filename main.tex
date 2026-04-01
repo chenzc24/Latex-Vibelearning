@@ -1,0 +1,234 @@
+% =============================================================================
+%  LATEX COMPLETE REFERENCE — A Learning Project
+%  Compile with: pdflatex main.tex (twice for references)
+%  Or: xelatex main.tex
+% =============================================================================
+
+% --- PREAMBLE: Everything before \begin{document} ---
+\documentclass[12pt, a4paper]{report}
+
+% ========================== PACKAGES ==========================================
+% Packages extend LaTeX beyond its core. Load them in the preamble, after
+% \documentclass but before \begin{document}. Order matters for some packages.
+
+% -- Encoding & fonts --
+\usepackage[utf8]{inputenc}          % Allow UTF-8 characters (accented letters etc.)
+\usepackage[T1]{fontenc}             % Use 8-bit font encoding for proper hyphenation
+
+% -- Page layout --
+\usepackage{geometry}                % Control margins, paper size, orientation
+
+% -- Graphics & drawing --
+\usepackage{graphicx}                % \includegraphics — insert PNG, PDF, JPG images
+\usepackage{tikz}                    % Programmable vector graphics inside LaTeX
+\usetikzlibrary{shapes.geometric, positioning, arrows.meta}
+                                     % TikZ libraries: extra shapes, relative positioning, arrow heads
+\usepackage{pgfplots}                % Publication-quality 2D/3D plots built on TikZ
+\pgfplotsset{compat=1.18}           % Pin pgfplots API version to avoid deprecation warnings
+
+% -- Mathematics --
+\usepackage{amsmath, amssymb, amsthm} % amsmath: align, cases, matrices; amssymb: extra symbols; amsthm: theorem environments
+
+% -- Tables --
+\usepackage{booktabs}                % \toprule/\midrule/\bottomrule — professional horizontal rules
+\usepackage{array}                   % Extends column types (m{}, >{}, p{})
+\usepackage{longtable}               % Tables that break across pages
+\usepackage{multirow}                % \multirow — cells spanning multiple rows
+\usepackage{tabularx}                % Auto-wrapping X column for fixed-width tables
+
+% -- Floats & captions --
+\usepackage{float}                   % [H] placement — force float exactly here
+\usepackage{caption}                 % Fine-tune caption fonts, labels, spacing
+\usepackage{subcaption}              % Subfigures / subtables inside a figure
+
+% -- Text & formatting --
+\usepackage[table]{xcolor}           % \textcolor, \colorbox, \rowcolor; [table] adds table coloring support
+\usepackage{enumitem}                % Custom list labels, spacing, numbering start
+\usepackage{parskip}                 % Remove paragraph indent, add vertical skip instead
+\usepackage{indentfirst}             % Indent the very first paragraph after a heading
+
+% -- Code listings --
+\usepackage{listings}                % Syntax-highlighted code blocks (see \lstset below)
+\usepackage{fancyvrb}                % Enhanced verbatim with frames, font control
+
+% -- Cross-references & links --
+\usepackage{hyperref}                % Clickable refs, \url, \href — load late in preamble
+\usepackage{url}                     % Line-breakable URLs in text
+
+% -- Structure --
+\usepackage{fancyhdr}                % Custom headers (\fancyhead) and footers (\fancyfoot)
+\usepackage{tocloft}                 % Style the table of contents, list of figures/tables
+\usepackage{titlesec}                % Customize chapter/section title formatting
+\usepackage{appendix}                % \appendix + clearer appendix numbering
+
+% -- Science --
+\usepackage{siunitx}                 % Proper SI units: \SI{9.8}{m/s^2}
+
+% ========================== PAGE LAYOUT =======================================
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headheight=14.5pt                % Must be >= actual header height to avoid fancyhdr warning
+}
+
+% ========================== HEADER / FOOTER ===================================
+\pagestyle{fancy}
+\fancyhf{}                           % Clear defaults
+\fancyhead[L]{\leftmark}             % Left header = chapter name
+\fancyhead[R]{\thepage}              % Right header = page number
+\fancyfoot[C]{\textit{LaTeX Complete Reference}} % Center footer
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ========================== HYPERREF CONFIG ===================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    filecolor=magenta,
+    urlcolor=cyan!60!black,
+    citecolor=green!50!black,
+    pdftitle={LaTeX Complete Reference},
+    pdfauthor={Learner},
+    pdfsubject={LaTeX Tutorial},
+}
+
+% ========================== CODE LISTING STYLE ================================
+% Global defaults for every \begin{lstlisting} block.  Override per-block with
+% [language=Python, caption={…}] etc.
+
+\lstset{
+    basicstyle=\ttfamily\small,                  % Monospace font, slightly smaller than body
+    keywordstyle=\color{blue}\bfseries,          % Language keywords (def, for, if …)
+    commentstyle=\color{green!50!black}\itshape, % Comments — dark green italic
+    stringstyle=\color{red!70!black},            % String literals — dark red
+    numbers=left,                                % Line numbers on the left gutter
+    numberstyle=\tiny\color{gray},               % Line-number font
+    frame=single,                                % Thin border around each listing
+    breaklines=true,                             % Wrap long lines automatically
+    captionpos=b,                                % Caption rendered below the listing
+    tabsize=4,                                   % Tab width in spaces
+    showstringspaces=false,                      % Don't mark spaces inside strings
+}
+
+% ========================== CUSTOM COLORS =====================================
+\definecolor{myblue}{RGB}{0, 102, 204}
+\definecolor{mygray}{RGB}{128, 128, 128}
+\definecolor{mygreen}{RGB}{0, 128, 0}
+
+% ========================== CUSTOM COMMANDS ===================================
+% Define project-wide shorthand commands here.
+% See Chapter 14 for how to create your own commands and environments.
+
+\newcommand{\latex}{\LaTeX}                     % Shorthand: \latex → LaTeX logo
+\newcommand{\important}[1]{\textbf{\color{red}#1}}  % Red bold callout for critical warnings
+\newcommand{\note}[1]{\textit{Note: #1}}              % Italic "Note: …" for tips
+\newenvironment{demoobox}[1]
+    {\begin{center}\fbox{\begin{minipage}{0.9\textwidth}\textbf{#1}\par\smallskip}}
+    {\end{minipage}\end{center}}                       % Demo box for ch14
+
+% ========================== TITLE INFO ========================================
+\title{
+    \vspace{-2cm}
+    \includegraphics[width=0.3\textwidth]{example-image-a}\\[1cm]
+    {\Huge \bfseries \LaTeX{} Complete Reference}\\[0.5cm]
+    {\Large A Comprehensive Learning Guide}
+}
+\author{Your Name}
+\date{\today}
+
+% =============================================================================
+%  DOCUMENT BEGINS
+% =============================================================================
+\begin{document}
+
+% --- Title Page ---
+\maketitle
+\thispagestyle{empty}
+
+% --- Table of Contents ---
+\newpage
+\tableofcontents
+\newpage
+
+% =============================================================================
+%  CHAPTER 1: Document Structure & Document Classes
+% =============================================================================
+\input{chapters/01_document_structure}
+
+% =============================================================================
+%  CHAPTER 2: Text Formatting & Fonts
+% =============================================================================
+\input{chapters/02_text_formatting}
+
+% =============================================================================
+%  CHAPTER 3: Lists
+% =============================================================================
+\input{chapters/03_lists}
+
+% =============================================================================
+%  CHAPTER 4: Tables
+% =============================================================================
+\input{chapters/04_tables}
+
+% =============================================================================
+%  CHAPTER 5: Mathematics
+% =============================================================================
+\input{chapters/05_mathematics}
+
+% =============================================================================
+%  CHAPTER 6: Figures and Floats
+% =============================================================================
+\input{chapters/06_figures}
+
+% =============================================================================
+%  CHAPTER 7: Cross References & Hyperlinks
+% =============================================================================
+\input{chapters/07_references}
+
+% =============================================================================
+%  CHAPTER 8: Bibliography
+% =============================================================================
+\input{chapters/08_bibliography}
+
+% =============================================================================
+%  CHAPTER 9: Code Listings & Verbatim
+% =============================================================================
+\input{chapters/09_code}
+
+% =============================================================================
+%  CHAPTER 10: TikZ Graphics
+% =============================================================================
+\input{chapters/10_tikz}
+
+% =============================================================================
+%  CHAPTER 11: Page Layout & Headers/Footers
+% =============================================================================
+\input{chapters/11_layout}
+
+% =============================================================================
+%  CHAPTER 12: Floating Bodies & Captions
+% =============================================================================
+\input{chapters/12_floats}
+
+% =============================================================================
+%  CHAPTER 13: Packages & Their Uses
+% =============================================================================
+\input{chapters/13_packages}
+
+% =============================================================================
+%  CHAPTER 14: Custom Commands & Environments
+% =============================================================================
+\input{chapters/14_custom_commands}
+
+% =============================================================================
+%  CHAPTER 15: Advanced Topics
+% =============================================================================
+\input{chapters/15_advanced}
+
+% --- APPENDIX ---
+\appendix
+\input{chapters/appendix}
+
+\end{document}

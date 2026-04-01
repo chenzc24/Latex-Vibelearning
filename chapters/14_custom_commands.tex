@@ -1,0 +1,215 @@
+% =============================================================================
+%  CHAPTER 14: Custom Commands & Environments
+% =============================================================================
+
+\chapter{Custom Commands \& Environments}
+
+\section{New Commands (\texttt{\textbackslash newcommand})}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=newcommand syntax]
+% Basic: no arguments
+\newcommand{\myname}{John Doe}
+Hello, I am \myname.          % Output: Hello, I am John Doe.
+
+% With arguments (1 required argument):
+\newcommand{\greet}[1]{Hello, #1!}
+\greet{Alice}                 % Output: Hello, Alice!
+
+% With multiple arguments:
+\newcommand{\add}[2]{#1 + #2}
+$\add{a}{b}$                  % Output: a + b
+
+% With optional arguments:
+\newcommand{\hello}[2][World]{Hello, #2 from #1!}
+\hello{Alice}                 % Output: Hello, Alice from World!
+\hello[Bob]{Alice}            % Output: Hello, Alice from Bob!
+
+% Maximum 9 arguments (#1 through #9)
+\end{lstlisting}
+
+\subsection{Practical Examples}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Practical custom commands]
+% Shorthand for common formatting:
+\newcommand{\pkg}[1]{\texttt{#1}}
+\newcommand{\cmd}[1]{\texttt{\textbackslash#1}}
+
+% Math shortcuts:
+\newcommand{\R}{\mathbb{R}}              % Real numbers
+\newcommand{\norm}[1]{\left\|#1\right\|} % Norm notation
+\newcommand{\abs}[1]{\left|#1\right|}    % Absolute value
+\newcommand{\inner}[2]{\langle #1, #2 \rangle} % Inner product
+\newcommand{\dd}{\,\mathrm{d}}           % Differential d
+
+% Usage:
+% $f\colon \R^n \to \R$
+% $\norm{x} = \sqrt{\inner{x}{x}}$
+% $\int_0^1 f(x) \dd x$
+\end{lstlisting}
+
+Results:
+\[ f\colon \mathbb{R}^n \to \mathbb{R}, \quad \|x\| = \sqrt{\langle x, x \rangle} \]
+
+% ------------------------------------------------------------------
+\section{Renaming Commands (\texttt{\textbackslash renewcommand})}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=renewcommand]
+% Override existing commands:
+\renewcommand{\contentsname}{Contents}        % Rename TOC title
+\renewcommand{\figurename}{Fig.}              % Rename figure label
+\renewcommand{\tablename}{Table}              % Rename table label
+\renewcommand{\bibname}{References}           % Rename bibliography
+
+% Check if command exists:
+\providecommand{\mycommand}{default value}   % Define only if not already
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{New Environments}
+
+You can define entire environments (begin/end pairs) with \verb|\newenvironment|:
+
+The syntax is:
+\verb|\newenvironment{name}[args]{begin-code}{end-code}|
+
+\textbf{Example 1} -- a simple warning box:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\newenvironment{warning}
+    {\begin{center}\bfseries Warning: }
+    {\end{center}}
+\end{lstlisting}
+
+\textbf{Example 2} -- a box with a title argument:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\newenvironment{infobox}[1]
+    {\begin{center}\fbox{\parbox{0.9\textwidth}%
+     {\textbf{##1}\par\smallskip}}}
+    {\end{center}}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Lengths and Counters}
+
+\subsection{Defining Lengths}
+
+\begin{Verbatim}[frame=single, fontsize=\small, label=Custom lengths]
+% Create a new length:
+\newlength{\mywidth}
+\setlength{\mywidth}{5cm}
+
+% Use it:
+\hspace{\mywidth}
+
+% Arithmetic on lengths:
+\addtolength{\mywidth}{2cm}           % Add 2cm
+\settowidth{\mywidth}{Hello World}    % Set to width of text
+\settoheight{\myheight}{Text}         % Set to height
+\settodepth{\mydepth}{Text}           % Set to depth
+\end{Verbatim}
+
+\subsection{Standard Lengths}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Length} & \textbf{Controls} \\
+\midrule
+\verb|\textwidth|      & Width of text area \\
+\verb|\linewidth|      & Width of current line \\
+\verb|\columnwidth|    & Width of column \\
+\verb|\paperwidth|     & Width of paper \\
+\verb|\paperheight|    & Height of paper \\
+\verb|\parindent|      & Paragraph indentation \\
+\verb|\parskip|        & Space between paragraphs \\
+\verb|\baselineskip|   & Distance between baselines \\
+\verb|\columnsep|      & Space between columns \\
+\bottomrule
+\end{tabular}
+\caption{Standard \latex{} lengths}
+\end{table}
+
+\subsection{Counters}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Counters]
+% Define a new counter:
+\newcounter{mycounter}
+
+% Set, step, and use:
+\setcounter{mycounter}{0}
+\stepcounter{mycounter}      % Increment by 1
+\addtocounter{mycounter}{5}  % Add 5
+
+% Display:
+\arabic{mycounter}   % 1, 2, 3
+\roman{mycounter}    % i, ii, iii
+\Roman{mycounter}    % I, II, III
+\alph{mycounter}     % a, b, c
+\Alph{mycounter}     % A, B, C
+\fnsymbol{mycounter} % *, dagger, double-dagger, etc.
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Conditional Commands}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Conditionals]
+% ifthen package:
+\usepackage{ifthen}
+
+\newcommand{\checkodd}[1]{%
+    \ifthenelse{\isodd{#1}}%
+        {#1 is odd}%
+        {#1 is even}%
+}
+
+% Boolean flags:
+\newboolean{draftmode}
+\setboolean{draftmode}{true}
+
+\ifthenelse{\boolean{draftmode}}%
+    {\watermark{DRAFT}}%
+    {}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Boxes}
+
+\begin{Verbatim}[frame=single, fontsize=\small, label=Boxes]
+% mbox: prevents line breaks
+\mbox{This text stays on one line}
+
+% fbox: framed box
+\fbox{Framed text}
+
+% makebox: custom box with alignment
+\makebox[5cm][c]{Centered in 5cm}
+% Alignment: l=left, c=center, r=right, s=stretch
+
+% parbox: paragraph in a box
+\parbox{3cm}{This text wraps inside a 3cm-wide box.}
+
+% minipage: like parbox but more powerful
+\begin{minipage}[t]{0.45\textwidth}
+    Left column content.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+    Right column content.
+\end{minipage}
+
+% raisebox: vertically offset text
+\raisebox{5pt}{Raised text}
+\raisebox{-5pt}{Lowered text}
+\end{Verbatim}
+
+Side-by-side minipage example:
+
+\begin{minipage}[t]{0.45\textwidth}
+    \textbf{Left Column}\\
+    This content sits in the left minipage. It wraps automatically within the specified width.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+    \textbf{Right Column}\\
+    This content sits in the right minipage. Using minipages we can create multi-column layouts anywhere.
+\end{minipage}

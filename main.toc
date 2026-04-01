@@ -1,0 +1,169 @@
+\contentsline {chapter}{\numberline {1}Document Structure \& Document Classes}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Document Classes}{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Document Class Options}{5}{subsection.1.1.1}%
+\contentsline {section}{\numberline {1.2}Sectioning Commands}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Starred Versions}{7}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Input and Include}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Comments}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Special Characters}{7}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Text Formatting \& Fonts}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Font Styles}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Examples}{9}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Font Sizes}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Text Alignment}{10}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Centering}{10}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Flush Left (Ragged Right)}{10}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Flush Right (Ragged Left)}{11}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Line \& Paragraph Spacing}{11}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Vertical Spacing}{11}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Horizontal Spacing}{12}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Text Decoration \& Color}{12}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Underline and Overline}{12}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Strikethrough (requires ulem package)}{12}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Text Color (xcolor package)}{12}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Accents and Special Characters}{13}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Dashes and Quotes}{13}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Lists}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Itemize (Bulleted Lists)}{15}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Nested Itemize}{15}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Enumerate (Numbered Lists)}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Nested Enumerate}{16}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Description Lists}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Customizing Lists with enumitem}{17}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Custom Labels}{17}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Custom Bullet Symbols}{17}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Spacing Control}{18}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Inline Lists}{19}{section.3.5}%
+\contentsline {section}{\numberline {3.6}List Summary}{19}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Tables}{20}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Basic Table (tabular)}{20}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Column Types}{20}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Basic Example}{20}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Table Syntax}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Professional Tables with booktabs}{21}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Multi-column and Multi-row}{22}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Multi-column (\texttt {\textbackslash multicolumn})}{22}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Multi-row (multirow package)}{22}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Fixed-width Tables (tabularx)}{22}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Multi-page Tables (longtable)}{23}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Table Placement (Float)}{24}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Colored Tables}{24}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Table Quick Reference}{25}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Mathematics}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Math Modes}{26}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Superscripts and Subscripts}{27}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Fractions}{27}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Roots}{27}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Sums, Products, Integrals}{27}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Greek Letters}{28}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Mathematical Operators and Functions}{28}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Relations and Binary Operators}{29}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Arrows}{29}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Matrices}{29}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Multi-line Equations (align)}{30}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Cases and Piecewise Functions}{31}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Accents in Math Mode}{32}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Spacing in Math Mode}{32}{section.5.14}%
+\contentsline {section}{\numberline {5.15}Text Inside Math Mode}{32}{section.5.15}%
+\contentsline {section}{\numberline {5.16}Theorems and Proofs}{33}{section.5.16}%
+\contentsline {section}{\numberline {5.17}Comprehensive Math Example}{33}{section.5.17}%
+\contentsline {chapter}{\numberline {6}Figures \& Images}{34}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Including Images (graphicx)}{34}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Figure Environment (Float)}{34}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Referencing Figures}{35}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Subfigures (subcaption package)}{35}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Image Size Options}{36}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Wrapping Text Around Images}{36}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Drawing Simple Graphics with TikZ (Preview)}{36}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Cross References \& Hyperlinks}{38}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Labels and References}{38}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Label Naming Conventions}{39}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Pageref and Nameref}{39}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Hyperlinks (hyperref package)}{39}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Table of Contents}{40}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Custom TOC Entry}{40}{subsection.7.3.1}%
+\contentsline {chapter}{\numberline {8}Bibliography \& Citations}{41}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Basic Bibliography with thebibliography}{41}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Citation Commands}{42}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}BibTeX with .bib Files}{42}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}The .bib File}{42}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Entry Types}{43}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Common Fields}{44}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}Using BibTeX}{44}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Bibliography Styles}{44}{subsection.8.3.1}%
+\contentsline {section}{\numberline {8.4}Biblatex (Modern Approach)}{45}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Example Bibliography}{45}{section.8.5}%
+\contentsline {chapter}{\numberline {9}Code Listings \& Verbatim Text}{47}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Verbatim Text}{47}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Inline Verbatim Examples}{47}{subsection.9.1.1}%
+\contentsline {section}{\numberline {9.2}Code Listings (listings package)}{48}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Basic Listing}{48}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Listing with Language}{48}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Java Example}{48}{subsection.9.2.3}%
+\contentsline {subsection}{\numberline {9.2.4}C/C++ Example}{48}{subsection.9.2.4}%
+\contentsline {subsection}{\numberline {9.2.5}JavaScript Example}{49}{subsection.9.2.5}%
+\contentsline {section}{\numberline {9.3}Listing Styles and Configuration}{49}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Inline Code}{50}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Supported Languages}{50}{section.9.5}%
+\contentsline {chapter}{\numberline {10}TikZ Graphics}{51}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Basic Shapes}{51}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Lines and Paths}{51}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Filling and Colors}{52}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Nodes and Labels}{52}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Flowchart}{53}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Plots with pgfplots}{53}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Bar Chart}{54}{section.10.7}%
+\contentsline {section}{\numberline {10.8}TikZ Styles}{54}{section.10.8}%
+\contentsline {chapter}{\numberline {11}Page Layout \& Headers/Footers}{56}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Page Geometry (geometry package)}{56}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Understanding Page Layout}{57}{subsection.11.1.1}%
+\contentsline {section}{\numberline {11.2}Headers and Footers (fancyhdr)}{57}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Position Codes}{58}{subsection.11.2.1}%
+\contentsline {section}{\numberline {11.3}Page Numbering}{58}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Multiple Columns}{58}{section.11.4}%
+\contentsline {section}{\numberline {11.5}Page Breaks}{59}{section.11.5}%
+\contentsline {section}{\numberline {11.6}Paragraph Control}{59}{section.11.6}%
+\contentsline {chapter}{\numberline {12}Floating Bodies \& Captions}{60}{chapter.12}%
+\contentsline {section}{\numberline {12.1}What Are Floats?}{60}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Placement Specifiers}{60}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Captions}{61}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Caption Styles (caption package)}{61}{subsection.12.3.1}%
+\contentsline {section}{\numberline {12.4}Side Captions}{62}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Float Barriers}{62}{section.12.5}%
+\contentsline {section}{\numberline {12.6}Controlling Float Counters}{62}{section.12.6}%
+\contentsline {chapter}{\numberline {13}Essential Packages \& Their Uses}{63}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Package Management}{63}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Essential Package Reference}{63}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Package Conflicts and Loading Order}{64}{section.13.3}%
+\contentsline {section}{\numberline {13.4}SI Units (siunitx)}{65}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Creating Your Own Package}{66}{section.13.5}%
+\contentsline {chapter}{\numberline {14}Custom Commands \& Environments}{67}{chapter.14}%
+\contentsline {section}{\numberline {14.1}New Commands (\texttt {\textbackslash newcommand})}{67}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}Practical Examples}{67}{subsection.14.1.1}%
+\contentsline {section}{\numberline {14.2}Renaming Commands (\texttt {\textbackslash renewcommand})}{68}{section.14.2}%
+\contentsline {section}{\numberline {14.3}New Environments}{68}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Lengths and Counters}{68}{section.14.4}%
+\contentsline {subsection}{\numberline {14.4.1}Defining Lengths}{68}{subsection.14.4.1}%
+\contentsline {subsection}{\numberline {14.4.2}Standard Lengths}{69}{subsection.14.4.2}%
+\contentsline {subsection}{\numberline {14.4.3}Counters}{69}{subsection.14.4.3}%
+\contentsline {section}{\numberline {14.5}Conditional Commands}{69}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Boxes}{70}{section.14.6}%
+\contentsline {chapter}{\numberline {15}Advanced Topics}{72}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Tables of Contents for Non-Standard Sections}{72}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Index}{72}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Glossary / Acronyms}{73}{section.15.3}%
+\contentsline {section}{\numberline {15.4}Watermarks}{73}{section.15.4}%
+\contentsline {section}{\numberline {15.5}Conditional Compilation}{74}{section.15.5}%
+\contentsline {section}{\numberline {15.6}External Files and Shell Escape}{74}{section.15.6}%
+\contentsline {section}{\numberline {15.7}Compilation Tools}{74}{section.15.7}%
+\contentsline {subsection}{\numberline {15.7.1}latexmk}{74}{subsection.15.7.1}%
+\contentsline {subsection}{\numberline {15.7.2}Compilation Engines}{75}{subsection.15.7.2}%
+\contentsline {subsection}{\numberline {15.7.3}Using System Fonts (XeLaTeX/LuaLaTeX)}{75}{subsection.15.7.3}%
+\contentsline {section}{\numberline {15.8}Beamer Presentations (Overview)}{75}{section.15.8}%
+\contentsline {section}{\numberline {15.9}Multilingual Support}{76}{section.15.9}%
+\contentsline {section}{\numberline {15.10}Error Handling}{77}{section.15.10}%
+\contentsline {chapter}{\numberline {A}Quick Reference Card}{78}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Document Skeleton}{78}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Symbol Quick Reference}{80}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Useful Commands Cheat Sheet}{81}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Compilation Workflow}{81}{section.A.4}%

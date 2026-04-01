@@ -1,0 +1,245 @@
+% =============================================================================
+%  CHAPTER 3: Lists
+% =============================================================================
+
+\chapter{Lists}
+
+\section{Itemize (Bulleted Lists)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Basic itemize list]
+\begin{itemize}
+    \item First item
+    \item Second item
+    \item Third item
+\end{itemize}
+\end{lstlisting}
+
+Result:
+\begin{itemize}
+    \item First item
+    \item Second item
+    \item Third item
+\end{itemize}
+
+\subsection{Nested Itemize}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Nested itemize]
+\begin{itemize}
+    \item First level
+    \begin{itemize}
+        \item Second level
+        \begin{itemize}
+            \item Third level
+            \begin{itemize}
+                \item Fourth level
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\end{lstlisting}
+
+Result:
+\begin{itemize}
+    \item First level
+    \begin{itemize}
+        \item Second level
+        \begin{itemize}
+            \item Third level
+            \begin{itemize}
+                \item Fourth level
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section{Enumerate (Numbered Lists)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Basic enumerate list]
+\begin{enumerate}
+    \item First item
+    \item Second item
+    \item Third item
+\end{enumerate}
+\end{lstlisting}
+
+Result:
+\begin{enumerate}
+    \item First item
+    \item Second item
+    \item Third item
+\end{enumerate}
+
+\subsection{Nested Enumerate}
+
+\begin{enumerate}
+    \item First level
+    \begin{enumerate}
+        \item Second level
+        \begin{enumerate}
+            \item Third level
+            \begin{enumerate}
+                \item Fourth level
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+    \item Back to first level
+\end{enumerate}
+
+% ------------------------------------------------------------------
+\section{Description Lists}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Description list]
+\begin{description}
+    \item[Term 1] Definition or description of term 1.
+    \item[Term 2] Definition or description of term 2.
+    \item[Term 3] Definition or description of term 3.
+\end{description}
+\end{lstlisting}
+
+Result:
+\begin{description}
+    \item[\latex{}] A document preparation system.
+    \item[TeX] The typesetting engine by Donald Knuth.
+    \item[PDF] Portable Document Format.
+\end{description}
+
+% ------------------------------------------------------------------
+\section{Customizing Lists with enumitem}
+
+The \texttt{enumitem} package provides powerful list customization.
+
+\subsection{Custom Labels}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Custom enumerate labels]
+% Roman numerals:
+\begin{enumerate}[label=\Roman*.]
+    \item First
+    \item Second
+\end{enumerate}
+
+% Alphabetical:
+\begin{enumerate}[label=\alph*)]
+    \item First
+    \item Second
+\end{enumerate}
+
+% Custom format:
+\begin{enumerate}[label=Step \arabic*:)]
+    \item First
+    \item Second
+\end{enumerate}
+\end{lstlisting}
+
+Roman numerals:
+\begin{enumerate}[label=\Roman*.]
+    \item First
+    \item Second
+    \item Third
+\end{enumerate}
+
+Alphabetical:
+\begin{enumerate}[label=\alph*)]
+    \item First
+    \item Second
+    \item Third
+\end{enumerate}
+
+Custom format:
+\begin{enumerate}[label=Step \arabic*:]
+    \item Gather requirements
+    \item Design solution
+    \item Implement
+    \item Test
+\end{enumerate}
+
+\subsection{Custom Bullet Symbols}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Custom bullets]
+\begin{itemize}[label=$\star$]
+    \item Star bullet
+    \item Another star
+\end{itemize}
+
+\begin{itemize}[label=\textbullet]
+    \item Standard bullet
+\end{itemize}
+
+\begin{itemize}[label=$\checkmark$]
+    \item Checkmark bullet
+\end{itemize}
+\end{lstlisting}
+
+\begin{itemize}[label=$\star$]
+    \item Star bullet one
+    \item Star bullet two
+\end{itemize}
+
+\begin{itemize}[label=$\checkmark$]
+    \item Completed task one
+    \item Completed task two
+\end{itemize}
+
+\subsection{Spacing Control}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=List spacing]
+\begin{itemize}[nosep]           % No extra spacing between items
+    \item Compact item 1
+    \item Compact item 2
+\end{itemize}
+
+\begin{itemize}[topsep=0pt]     % No space above/below list
+    \item Item 1
+    \item Item 2
+\end{itemize}
+
+\begin{enumerate}[start=5]      % Start counting from 5
+    \item Fifth
+    \item Sixth
+\end{enumerate}
+\end{lstlisting}
+
+Compact list (\texttt{nosep}):
+\begin{itemize}[nosep]
+    \item Compact item 1
+    \item Compact item 2
+    \item Compact item 3
+\end{itemize}
+
+Starting from 5:
+\begin{enumerate}[start=5]
+    \item Fifth
+    \item Sixth
+    \item Seventh
+\end{enumerate}
+
+% ------------------------------------------------------------------
+\section{Inline Lists}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Inline list with enumitem]
+\usepackage[inline]{enumitem}
+
+The colors are:
+\begin{enumerate*}[label=\arabic*.]
+    \item red, \item green, and \item blue.
+\end{enumerate*}
+\end{lstlisting}
+
+\note{Inline lists require \texttt{\textbackslash usepackage[inline]\{enumitem\}}.}
+
+% ------------------------------------------------------------------
+\section{List Summary}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llp{6cm}}
+\toprule
+\textbf{Environment} & \textbf{Best For} & \textbf{Default Label} \\
+\midrule
+\texttt{itemize}    & Unordered items     & Bullets ($\bullet$, --, *, $\cdot$) \\
+\texttt{enumerate}  & Ordered/sequential  & Numbers (1., (a), i., A.) \\
+\texttt{description}& Definitions/terms   & Bold label text \\
+\bottomrule
+\end{tabular}
+\caption{List environments summary}
+\end{table}

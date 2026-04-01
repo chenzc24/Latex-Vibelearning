@@ -1,0 +1,175 @@
+% =============================================================================
+%  CHAPTER 1: Document Structure & Document Classes
+% =============================================================================
+
+\chapter{Document Structure \& Document Classes}
+
+Every \latex{} document consists of two main parts:
+\begin{enumerate}
+    \item \textbf{Preamble} — everything before \verb|\begin{document}|
+    \item \textbf{Body} — the content between \verb|\begin{document}| and \verb|\end{document}|
+\end{enumerate}
+
+% ------------------------------------------------------------------
+\section{Document Classes}
+\label{sec:docclasses}
+
+The \verb|\documentclass| command must be the very first command. It defines the type of document.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Class} & \textbf{Purpose} & \textbf{Sectioning} \\
+\midrule
+\texttt{article} & Short documents, journal papers & section, subsection \\
+\texttt{report}  & Longer documents, theses        & chapter, section \\
+\texttt{book}    & Full books                      & part, chapter, section \\
+\texttt{letter}  & Letters                         & — \\
+\texttt{beamer}  & Presentations/slides            & frame \\
+\texttt{scrartcl} & KOMA-Script article            & section \\
+\texttt{scrreprt} & KOMA-Script report             & chapter \\
+\texttt{scrbook}  & KOMA-Script book               & part, chapter \\
+\bottomrule
+\end{tabular}
+\caption{Common document classes in \latex{}}
+\end{table}
+
+\subsection{Document Class Options}
+
+Class options go in square brackets: \verb|\documentclass[options]{class}|
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Option} & \textbf{Effect} \\
+\midrule
+\texttt{12pt}        & Sets font size (10pt, 11pt, 12pt) \\
+\texttt{a4paper}     & Sets paper size (a4paper, letterpaper, legalpaper) \\
+\texttt{twoside}     & Formats for two-sided printing \\
+\texttt{oneside}     & Formats for one-sided printing (default) \\
+\texttt{landscape}   & Landscape orientation \\
+\texttt{draft}       & Draft mode — marks overfull boxes \\
+\texttt{final}       & Final mode (default) \\
+\texttt{twocolumn}   & Two-column layout \\
+\texttt{titlepage}   & Title on a separate page \\
+\texttt{openright}   & Chapters start on right-hand page \\
+\texttt{leqno}       & Equation numbers on left \\
+\texttt{fleqn}       & Left-aligned equations \\
+\bottomrule
+\end{tabular}
+\caption{Common document class options}
+\end{table}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Basic document structure]
+\documentclass[12pt, a4paper]{article}
+
+% === PREAMBLE ===
+% Load packages, define commands, set options here
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\title{My First Document}
+\author{Author Name}
+
+% === BODY ===
+\begin{document}
+\maketitle
+Hello, World!
+\end{document}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Sectioning Commands}
+
+\latex{} provides a hierarchy of sectioning commands:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Sectioning hierarchy]
+\part{Part Title}          % Level -1 (book/report only)
+\chapter{Chapter Title}    % Level 0  (book/report only)
+\section{Section Title}    % Level 1
+\subsection{Subsection}    % Level 2
+\subsubsection{Sub-sub}    % Level 3
+\paragraph{Paragraph}      % Level 4
+\subparagraph{Subparagraph}% Level 5
+\end{lstlisting}
+
+\subsection{Starred Versions}
+
+Each sectioning command has a starred version (e.g., \verb|\section*{Title}|) that:
+\begin{itemize}
+    \item Does \emph{not} add a number
+    \item Does \emph{not} appear in the table of contents
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section{Input and Include}
+
+Split large documents into multiple files:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=File inclusion commands]
+% \input{file}     -- inserts file content inline (no page break)
+% \include{file}   -- inserts file with \clearpage before and after
+%                    (cannot be nested)
+
+\input{chapters/chapter1}     % Preferred for small files
+\include{chapters/chapter2}   % Preferred for chapters
+\end{lstlisting}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Feature} & \textbf{\texttt{\textbackslash input}} & \textbf{\texttt{\textbackslash include}} \\
+\midrule
+Page breaks    & No  & Yes \\
+Can be nested  & Yes & No  \\
+Selective compilation & No & Yes (\texttt{\textbackslash includeonly}) \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of \texttt{\textbackslash input} vs \texttt{\textbackslash include}}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Comments}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Comments in LaTeX]
+% This is a single-line comment.
+% Everything after % on the line is ignored.
+
+% For multi-line comments, use the verbatim package:
+\usepackage{verbatim}
+\begin{comment}
+This entire block is commented out.
+Line two of the comment.
+Line three.
+\end{comment}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Special Characters}
+
+The following characters are \important{reserved} in \latex{} and need special handling:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cll}
+\toprule
+\textbf{Character} & \textbf{Purpose} & \textbf{To Print It} \\
+\midrule
+\texttt{\#}  & Macro parameter      & \verb|\#| \\
+\texttt{\$}  & Math mode            & \verb|\$| \\
+\texttt{\%}  & Comment              & \verb|\%| \\
+\texttt{\&}  & Table column sep.    & \verb|\&| \\
+\texttt{\_}  & Subscript (math)     & \verb|\_| \\
+\texttt{\{}  & Group begin          & \verb|\{| \\
+\texttt{\}}  & Group end            & \verb|\}| \\
+\texttt{\~{}}& Non-breaking space   & \verb|\~{}| or \verb|\textasciitilde| \\
+\texttt{\^{}}& Circumflex accent    & \verb|\^{}| or \verb|\textasciicircum| \\
+\texttt{\textbackslash} & Command prefix & \verb|\textbackslash| \\
+\bottomrule
+\end{tabular}
+\caption{Special characters in \latex{}}
+\end{table}
+
+\note{Accented characters can be typed directly in UTF-8: é, ü, ñ, ç, etc.}

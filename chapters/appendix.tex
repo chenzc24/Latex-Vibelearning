@@ -1,0 +1,158 @@
+% =============================================================================
+%  APPENDIX
+% =============================================================================
+
+\chapter{Quick Reference Card}
+
+\section{Document Skeleton}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Complete document skeleton]
+\documentclass[12pt, a4paper]{report}
+
+% === PREAMBLE ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tikz}
+
+\title{My Document Title}
+\author{Author Name}
+\date{\today}
+
+% === BODY ===
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+\label{ch:intro}
+
+\section{Background}
+\label{sec:background}
+
+Text with \textbf{bold}, \textit{italic}, and \texttt{monospace}.
+
+Inline math: $E = mc^2$
+
+Display math:
+\[ \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2} \]
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{myimage}
+    \caption{My figure.}
+    \label{fig:myfigure}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \caption{My table.}
+    \label{tab:mytable}
+    \begin{tabular}{lcc}
+        \toprule
+        Name & Value & Note \\
+        \midrule
+        A    & 1     & x \\
+        B    & 2     & y \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Symbol Quick Reference}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Symbol} & \textbf{Code} & \textbf{Symbol} & \textbf{Code} \\
+\midrule
+$\alpha$   & \verb|\alpha|   & $\beta$    & \verb|\beta| \\
+$\gamma$   & \verb|\gamma|   & $\delta$   & \verb|\delta| \\
+$\epsilon$ & \verb|\epsilon| & $\theta$   & \verb|\theta| \\
+$\lambda$  & \verb|\lambda|  & $\mu$      & \verb|\mu| \\
+$\pi$      & \verb|\pi|      & $\sigma$   & \verb|\sigma| \\
+$\phi$     & \verb|\phi|     & $\omega$   & \verb|\omega| \\
+$\sum$     & \verb|\sum|     & $\prod$    & \verb|\prod| \\
+$\int$     & \verb|\int|     & $\sqrt{x}$ & \verb|\sqrt{x}| \\
+$\frac{a}{b}$ & \verb|\frac{a}{b}| & $\infty$ & \verb|\infty| \\
+$\forall$  & \verb|\forall|  & $\exists$  & \verb|\exists| \\
+$\in$      & \verb|\in|      & $\notin$   & \verb|\notin| \\
+$\subset$  & \verb|\subset|  & $\cup$     & \verb|\cup| \\
+$\cap$     & \verb|\cap|     & $\emptyset$& \verb|\emptyset| \\
+$\to$      & \verb|\to|      & $\Rightarrow$ & \verb|\Rightarrow| \\
+$\leq$     & \verb|\leq|     & $\geq$     & \verb|\geq| \\
+$\neq$     & \verb|\neq|     & $\approx$  & \verb|\approx| \\
+$\pm$      & \verb|\pm|      & $\times$   & \verb|\times| \\
+$\cdot$    & \verb|\cdot|    & $\ldots$   & \verb|\ldots| \\
+$\cdots$   & \verb|\cdots|   & $\vdots$   & \verb|\vdots| \\
+\bottomrule
+\end{tabular}
+\caption{Common math symbols quick reference}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Useful Commands Cheat Sheet}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Command} & \textbf{Purpose} \\
+\midrule
+\verb|\documentclass{article}| & Set document type \\
+\verb|\usepackage{pkg}|       & Load a package \\
+\verb|\begin{env}...\end{env}| & Use an environment \\
+\verb|\textbf{text}|          & Bold text \\
+\verb|\textit{text}|          & Italic text \\
+\verb|\texttt{text}|          & Monospace text \\
+\verb|\underline{text}|       & Underlined text \\
+\verb|\textcolor{red}{text}|  & Colored text \\
+\verb|\footnote{text}|        & Footnote \\
+\verb|\cite{key}|             & Citation \\
+\verb|\ref{label}|            & Cross reference \\
+\verb|\pageref{label}|        & Page reference \\
+\verb|\label{key}|            & Define label \\
+\verb|\includegraphics{file}| & Include image \\
+\verb|\tableofcontents|       & Table of contents \\
+\verb|\listoffigures|         & List of figures \\
+\verb|\listoftables|          & List of tables \\
+\verb|\appendix|              & Start appendix \\
+\verb|\today|                 & Current date \\
+\verb|\LaTeX|                 & LaTeX logo \\
+\verb|\TeX|                   & TeX logo \\
+\bottomrule
+\end{tabular}
+\caption{Essential commands cheat sheet}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Compilation Workflow}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Task} & \textbf{Commands} \\
+\midrule
+Basic compile  & \texttt{pdflatex main.tex} \\
+With BibTeX    & \texttt{pdflatex main} $\to$ \texttt{bibtex main} $\to$ \texttt{pdflatex main} $\times 2$ \\
+With glossary  & Add \texttt{makeglossaries main} after first compile \\
+Automated      & \texttt{latexmk -pdf main.tex} \\
+Clean aux      & \texttt{latexmk -c} \\
+\bottomrule
+\end{tabular}
+\caption{Compilation workflows}
+\end{table}

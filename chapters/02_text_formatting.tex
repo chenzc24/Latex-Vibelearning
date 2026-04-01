@@ -1,0 +1,284 @@
+% =============================================================================
+%  CHAPTER 2: Text Formatting & Fonts
+% =============================================================================
+
+\chapter{Text Formatting \& Fonts}
+
+\section{Font Styles}
+
+\latex{} provides command pairs for font switching — one with \emph{declaration syntax} (affects all following text) and one with \emph{command syntax} (takes an argument).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Style} & \textbf{Declaration} & \textbf{Command} \\
+\midrule
+\textbf{Bold}          & \verb|\bfseries|  & \verb|\textbf{...}| \\
+\textit{Italic}        & \verb|\itshape|   & \verb|\textit{...}| \\
+\textsl{Slanted}       & \verb|\slshape|   & \verb|\textsl{...}| \\
+\texttt{Monospace}     & \verb|\ttfamily|  & \verb|\texttt{...}| \\
+\textsf{Sans-serif}    & \verb|\sffamily|  & \verb|\textsf{...}| \\
+\textsc{Small Caps}    & \verb|\scshape|   & \verb|\textsc{...}| \\
+\textmd{Medium}        & \verb|\mdseries|  & \verb|\textmd{...}| \\
+Upright                & \verb|\upshape|   & \verb|\textup{...}| \\
+\bottomrule
+\end{tabular}
+\caption{Font style commands}
+\end{table}
+
+\subsection{Examples}
+
+\begin{itemize}
+    \item \textbf{Bold text} with \verb|\textbf{Bold text}|
+    \item \textit{Italic text} with \verb|\textit{Italic text}|
+    \item \texttt{Typewriter text} with \verb|\texttt{Typewriter text}|
+    \item \textsf{Sans-serif text} with \verb|\textsf{Sans-serif text}|
+    \item \textsc{Small Capitals} with \verb|\textsc{Small Capitals}|
+    \item \textsl{Slanted text} with \verb|\textsl{Slanted text}|
+    \item \emph{Emphasized text} — \verb|\emph{}| toggles italic inside roman and roman inside italic
+    \item \emph{This is \emph{nested} emphasis} — \verb|\emph{This is \emph{nested} emphasis}|
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section{Font Sizes}
+
+Size commands are \emph{declarations} — they affect everything until the end of the group:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Command} & \textbf{Result} \\
+\midrule
+\verb|\tiny|         & {\tiny Sample text} \\
+\verb|\scriptsize|   & {\scriptsize Sample text} \\
+\verb|\footnotesize| & {\footnotesize Sample text} \\
+\verb|\small|        & {\small Sample text} \\
+\verb|\normalsize|   & {\normalsize Sample text} \\
+\verb|\large|        & {\large Sample text} \\
+\verb|\Large|        & {\Large Sample text} \\
+\verb|\LARGE|        & {\LARGE Sample text} \\
+\verb|\huge|         & {\huge Sample text} \\
+\verb|\Huge|         & {\Huge Sample text} \\
+\bottomrule
+\end{tabular}
+\caption{Font size commands (relative to base document font size)}
+\end{table}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Font size usage]
+{\large This text is large.}
+{\Large\bfseries This text is large and bold.}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Text Alignment}
+
+\subsection{Centering}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Centering text]
+% Environment form:
+\begin{center}
+    This text is centered.
+\end{center}
+
+% Declaration form (affects rest of group):
+{\centering This text is centered.\par}
+\end{lstlisting}
+
+\begin{center}
+    This is centered text using the \texttt{center} environment.
+\end{center}
+
+\subsection{Flush Left (Ragged Right)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Left-aligned text]
+\begin{flushleft}
+    This text is left-aligned.
+\end{flushleft}
+\end{lstlisting}
+
+\subsection{Flush Right (Ragged Left)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Right-aligned text]
+\begin{flushright}
+    This text is right-aligned.
+\end{flushright}
+\end{lstlisting}
+
+\begin{flushright}
+    This is right-aligned text.
+\end{flushright}
+
+% ------------------------------------------------------------------
+\section{Line \& Paragraph Spacing}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Line spacing]
+% Single spacing (default)
+% Double spacing:
+\usepackage{setspace}
+\doublespacing
+
+% 1.5 spacing:
+\onehalfspacing
+
+% Custom spacing:
+\setstretch{1.25}
+
+% Line break (new line, same paragraph):
+Line one.\\
+Line two.
+
+% Line break with extra space:
+Line one.\\[12pt]
+Line two with 12pt gap above.
+
+% New paragraph (blank line in source):
+Paragraph one.
+
+Paragraph two.
+
+% Horizontal spacing:
+Word\hspace{1cm}Word          % 1cm horizontal space
+Word\hspace{\fill}Word        % Stretchy space (pushes to margins)
+Word\hfill Word               % Shorthand for \hspace{\fill}
+\end{lstlisting}
+
+\subsection{Vertical Spacing}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Vertical spacing]
+\vspace{1cm}          % 1cm vertical space
+\vspace*{1cm}         % Forced space (even at page top)
+\vspace{\fill}        % Stretchy vertical space
+\vfill                % Shorthand for \vspace{\fill}
+\bigskip              % Large vertical skip (~12pt)
+\medskip              % Medium vertical skip (~6pt)
+\smallskip            % Small vertical skip (~3pt)
+\end{lstlisting}
+
+\subsection{Horizontal Spacing}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Command} & \textbf{Width} & \textbf{Description} \\
+\midrule
+\verb|\,|    or \verb|\thinspace|   & $\sim$3/18 quad & Thin space \\
+\verb|\:|    or \verb|\medspace|    & $\sim$4/18 quad & Medium space \\
+\verb|\;|    or \verb|\thickspace|  & $\sim$5/18 quad & Thick space \\
+\verb|\!|                          & $-$3/18 quad    & Negative thin space \\
+\verb|\enspace|                     & 0.5em           & En-space \\
+\verb|\quad|                        & 1em             & Quad space \\
+\verb|\qquad|                       & 2em             & Double quad \\
+\verb|\~{}|                         & variable        & Non-breaking space \\
+\verb|\hspace{length}|              & variable        & Custom horizontal space \\
+\bottomrule
+\end{tabular}
+\caption{Horizontal spacing commands}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Text Decoration \& Color}
+
+\subsection{Underline and Overline}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Underline and overline]
+\underline{Underlined text}
+\overline{Overlined text}        % Works in math mode too
+\end{lstlisting}
+
+\underline{Underlined text example.}
+
+\subsection{Strikethrough (requires ulem package)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Strikethrough]
+\usepackage[normalem]{ulem}
+
+\sout{Strikethrough text}
+\uwave{Wavy underline}
+\xout{Crossed out with /}
+\end{lstlisting}
+
+\subsection{Text Color (xcolor package)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Using colors]
+\textcolor{red}{Red text}
+\textcolor{blue}{Blue text}
+\textcolor{green!50!black}{Dark green text}
+
+% Color as declaration:
+{\color{red} This entire block is red.}
+
+% Define custom colors:
+\definecolor{mycolor}{RGB}{102, 178, 255}
+\textcolor{mycolor}{Custom colored text}
+
+% Background color (requires xcolor with table option):
+\colorbox{yellow}{Highlighted text}
+\fcolorbox{red}{yellow}{Box with red border and yellow background}
+\end{lstlisting}
+
+Examples: \textcolor{red}{Red}, \textcolor{blue}{Blue}, \textcolor{green!50!black}{Dark Green}, \colorbox{yellow}{Highlighted}
+
+% ------------------------------------------------------------------
+\section{Accents and Special Characters}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Accent} & \textbf{Command} & \textbf{Result} & \textbf{Alt (UTF-8)} \\
+\midrule
+Grave        & \verb|\`{o}| & \`{o} & \`o \\
+Acute        & \verb|\'{o}| & \'{o} & \'o \\
+Circumflex   & \verb|\^{o}| & \^{o} & \^o \\
+Tilde        & \verb|\~{o}| & \~{o} & \~o \\
+Umlaut       & \verb|\"{o}| & \"{o} & \"o \\
+Cedilla      & \verb|\c{c}| & \c{c} & \c{c} \\
+Ogonek       & \verb|\k{a}| & \k{a} & \\
+Macron       & \verb|\={o}| & \={o} & \\
+Breve        & \verb|\u{o}| & \u{o} & \\
+Dot          & \verb|\.{o}| & \.{o} & \\
+Ring         & \verb|\r{a}| & \r{a} & \\
+Hacek        & \verb|\v{o}| & \v{o} & \\
+Double acute & \verb|\H{o}| & \H{o} & \\
+\bottomrule
+\end{tabular}
+\caption{Accent commands}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Dashes and Quotes}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Type} & \textbf{Source} & \textbf{Result} & \textbf{Usage} \\
+\midrule
+Hyphen    & \verb|-|   & mother-in-law & Compound words \\
+En-dash   & \verb|--|  & pages 1--10   & Ranges \\
+Em-dash   & \verb|---| & Yes---indeed   & Interruptions \\
+Minus     & \verb|$-$| & $-$           & Mathematical minus \\
+\bottomrule
+\end{tabular}
+\caption{Types of dashes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Type} & \textbf{Source} & \textbf{Result} \\
+\midrule
+Opening double quotes & \verb|``| & ``Hello'' \\
+Closing double quotes & \verb|''| & ``Hello'' \\
+Opening single quote  & \verb|`|  & `Hello' \\
+Closing single quote  & \verb|'|  & `Hello' \\
+\bottomrule
+\end{tabular}
+\caption{Quotation marks}
+\end{table}
+
+\note{\latex{} does not use regular keyboard quotes (\texttt{"}). Always use backticks for opening quotes.}

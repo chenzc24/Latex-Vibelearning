@@ -1,0 +1,167 @@
+% =============================================================================
+%  CHAPTER 13: Essential Packages & Their Uses
+% =============================================================================
+
+\chapter{Essential Packages \& Their Uses}
+
+\section{Package Management}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Loading packages]
+% Basic syntax:
+\usepackage{packagename}
+
+% With options:
+\usepackage[option1, option2]{packagename}
+
+% Multiple packages at once:
+\usepackage{package1, package2, package3}
+\end{lstlisting}
+
+\note{Packages must be loaded in the preamble (before \texttt{\textbackslash begin\{document\}}). Load \texttt{hyperref} last (or near-last) as a general rule.}
+
+% ------------------------------------------------------------------
+\section{Essential Package Reference}
+
+\begin{longtable}{lp{4cm}p{6cm}}
+\toprule
+\textbf{Package} & \textbf{Category} & \textbf{Purpose} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+\texttt{inputenc}  & Encoding   & UTF-8 input encoding \\
+\texttt{fontenc}   & Encoding   & Font encoding (T1) \\
+\texttt{geometry}  & Layout     & Page margins and layout \\
+\texttt{graphicx}  & Graphics   & Include images \\
+\texttt{amsmath}   & Math       & Advanced math typesetting \\
+\texttt{amssymb}   & Math       & Additional math symbols \\
+\texttt{amsthm}    & Math       & Theorem environments \\
+\texttt{booktabs}  & Tables     & Professional table rules \\
+\texttt{array}     & Tables     & Extended column types \\
+\texttt{tabularx}  & Tables     & Flexible-width tables \\
+\texttt{longtable} & Tables     & Multi-page tables \\
+\texttt{multirow}  & Tables     & Multi-row cells \\
+\texttt{hyperref}  & Links      & Hyperlinks and cross-refs \\
+\texttt{xcolor}    & Color      & Color support \\
+\texttt{listings}  & Code       & Source code formatting \\
+\texttt{tikz}      & Graphics   & Programmable drawings \\
+\texttt{pgfplots}  & Graphics   & Plots and charts \\
+\texttt{fancyhdr}  & Layout     & Headers and footers \\
+\texttt{caption}   & Floats     & Caption customization \\
+\texttt{subcaption}& Floats     & Subfigures/subtables \\
+\texttt{enumitem}  & Lists      & Custom list formatting \\
+\texttt{parskip}   & Layout     & Paragraph spacing \\
+\texttt{float}     & Floats     & Improved float placement \\
+\texttt{siunitx}   & Science    & SI units and numbers \\
+\texttt{url}       & Links      & URL line breaking \\
+\texttt{fancyvrb}  & Verbatim   & Enhanced verbatim \\
+\texttt{multicol}  & Layout     & Multiple columns \\
+\texttt{wrapfig}   & Floats     & Text-wrapped figures \\
+\texttt{natbib}    & Bibliography & Flexible citations \\
+\texttt{biblatex}  & Bibliography & Modern bibliography \\
+\texttt{glossaries}& Reference  & Glossary / acronyms \\
+\texttt{index}     & Reference  & Index generation \\
+\texttt{nomencl}   & Reference  & Nomenclature lists \\
+\texttt{appendix}  & Structure  & Appendix formatting \\
+\texttt{titlesec}  & Structure  & Section title formatting \\
+\texttt{tocloft}   & TOC        & TOC customization \\
+\texttt{setspace}  & Layout     & Line spacing control \\
+\texttt{ulem}      & Text       & Underline / strikethrough \\
+\texttt{textcomp}  & Symbols    & Additional text symbols \\
+\texttt{placeins}  & Floats     & Float barriers \\
+\end{longtable}
+
+% ------------------------------------------------------------------
+\section{Package Conflicts and Loading Order}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Recommended loading order]
+% 1. Encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% 2. Language (babel or polyglossia)
+\usepackage[english]{babel}
+
+% 3. Fonts
+\usepackage{lmodern}   % Latin Modern fonts
+
+% 4. Math
+\usepackage{amsmath, amssymb, amsthm}
+
+% 5. Graphics and drawing
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% 6. Tables
+\usepackage{booktabs, array, tabularx}
+
+% 7. Layout
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+% 8. Lists and text
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+% 9. Code
+\usepackage{listings}
+
+% 10. Bibliography
+\usepackage{natbib}  % or biblatex
+
+% 11. Hyperref (ALWAYS LAST or near-last)
+\usepackage{hyperref}
+
+% 12. Appendix (after hyperref)
+\usepackage{appendix}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{SI Units (siunitx)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=siunitx package]
+\usepackage{siunitx}
+
+% Number formatting:
+\num{12345.67}              % 12 345.67
+\num{1.23e4}                % 1.23 x 10^4
+\num[round-precision=2]{3.14159}  % 3.14
+
+% Units:
+\si{kg}                     % kg
+\si{m/s}                    % m/s
+\si{kg.m.s^{-2}}            % kg m s^-2
+\si{\meter\per\second}      % m/s (symbolic)
+
+% Value + unit:
+\SI{9.8}{m/s^2}             % 9.8 m/s^2
+\SI{100}{\degreeCelsius}    % 100 degrees C
+\SI{3.14}{\micro\meter}     % 3.14 micrometer
+\end{lstlisting}
+
+Examples: The speed of light is \SI{3e8}{m/s}. Water boils at \SI{100}{\degreeCelsius}. The wavelength is \SI{550}{\nano\meter}.
+
+% ------------------------------------------------------------------
+\section{Creating Your Own Package}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Creating a package]
+% Save as mystyle.sty:
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mystyle}[2024/01/01 My Custom Style]
+
+% Package options:
+\DeclareOption{draft}{\typeout{Draft mode}}
+\ProcessOptions\relax
+
+% Load required packages:
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+
+% Define commands:
+\newcommand{\emphasis}[1]{\textbf{\textit{#1}}}
+
+\endinput
+% Then in your document:
+% \usepackage{mystyle}
+\end{lstlisting}

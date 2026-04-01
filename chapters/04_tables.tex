@@ -1,0 +1,310 @@
+% =============================================================================
+%  CHAPTER 4: Tables
+% =============================================================================
+
+\chapter{Tables}
+
+\section{Basic Table (tabular)}
+
+The \texttt{tabular} environment is the fundamental table environment in \latex{}.
+
+\subsection{Column Types}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cl}
+\toprule
+\textbf{Spec} & \textbf{Description} \\
+\midrule
+\texttt{l} & Left-aligned column \\
+\texttt{c} & Centered column \\
+\texttt{r} & Right-aligned column \\
+\texttt{p\{width\}} & Paragraph column with fixed width \\
+\texttt{|} & Vertical line \\
+\texttt{@\{text\}} & Replace inter-column space with \textit{text} \\
+\bottomrule
+\end{tabular}
+\caption{Column type specifications}
+\end{table}
+
+\subsection{Basic Example}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Basic tabular]
+\begin{tabular}{|l|c|r|}
+    \hline
+    Left & Center & Right \\
+    \hline
+    A    & B      & C \\
+    \hline
+\end{tabular}
+\end{lstlisting}
+
+Result:
+\begin{tabular}{|l|c|r|}
+    \hline
+    Left & Center & Right \\
+    \hline
+    A    & B      & C \\
+    \hline
+\end{tabular}
+
+% ------------------------------------------------------------------
+\section{Table Syntax}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Table syntax reference]
+% &      -- column separator
+% \\     -- end of row
+% \hline -- horizontal line (spans full width)
+% \cline{2-3} -- partial horizontal line (columns 2 to 3)
+
+\begin{tabular}{|l|c|r|}
+    \hline
+    Name  & Age & Score \\
+    \hline
+    Alice & 25  & 95 \\
+    Bob   & 30  & 87 \\
+    \cline{2-3}
+    \multicolumn{1}{c|}{} & \multicolumn{2}{c}{Partial line} \\
+    \hline
+\end{tabular}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Professional Tables with booktabs}
+
+The \texttt{booktabs} package produces publication-quality tables without vertical lines.
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=booktabs example]
+\usepackage{booktabs}
+
+\begin{tabular}{lcc}
+    \toprule
+    Name  & Age & Score \\
+    \midrule
+    Alice & 25  & 95 \\
+    Bob   & 30  & 87 \\
+    Carol & 28  & 92 \\
+    \bottomrule
+\end{tabular}
+\end{lstlisting}
+
+Result:
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Name}  & \textbf{Age} & \textbf{Score} \\
+\midrule
+Alice & 25  & 95 \\
+Bob   & 30  & 87 \\
+Carol & 28  & 92 \\
+\midrule
+\textbf{Average} & \textbf{27.7} & \textbf{91.3} \\
+\bottomrule
+\end{tabular}
+\caption{Student scores using booktabs}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{booktabs command} & \textbf{Purpose} \\
+\midrule
+\verb|\toprule|    & Top rule (thicker) \\
+\verb|\midrule|    & Middle rule (medium) \\
+\verb|\bottomrule| & Bottom rule (thicker) \\
+\verb|\cmidrule{a-b}| & Partial rule (thinner) \\
+\verb|\addlinespace|   & Extra vertical space \\
+\bottomrule
+\end{tabular}
+\caption{booktabs commands}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Multi-column and Multi-row}
+
+\subsection{Multi-column (\texttt{\textbackslash multicolumn})}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Multicolumn]
+\multicolumn{number_of_columns}{alignment}{text}
+\end{lstlisting}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llcc}
+\toprule
+ & \textbf{Math} & \textbf{Physics} & \textbf{Chemistry} \\
+\midrule
+Alice  & 95 & 88 & 91 \\
+Bob    & 87 & 92 & 85 \\
+\midrule
+\multicolumn{2}{l}{\textit{Class Average}} & \multicolumn{2}{c}{\textbf{89.7}} \\
+\bottomrule
+\end{tabular}
+\caption{Multicolumn example}
+\end{table}
+
+\subsection{Multi-row (multirow package)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Multirow]
+\usepackage{multirow}
+\multirow{number_of_rows}{width}{text}
+\end{lstlisting}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llcc}
+\toprule
+\textbf{Category} & \textbf{Subject} & \textbf{Students} & \textbf{Avg Score} \\
+\midrule
+\multirow{2}{*}{Science} & Physics  & 45 & 88 \\
+                          & Chemistry & 38 & 85 \\
+\midrule
+\multirow{2}{*}{Arts}    & History  & 32 & 91 \\
+                          & Literature & 29 & 93 \\
+\bottomrule
+\end{tabular}
+\caption{Multirow example}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Fixed-width Tables (tabularx)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=tabularx]
+\usepackage{tabularx}
+
+\begin{tabularx}{\textwidth}{lX}
+    \toprule
+    Name & Description \\
+    \midrule
+    Item 1 & This text automatically wraps to fill
+             the available column width. \\
+    Item 2 & Another long description that wraps
+             automatically in the X column. \\
+    \bottomrule
+\end{tabularx}
+\end{lstlisting}
+
+Result:
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.9\textwidth}{lX}
+\toprule
+\textbf{Command} & \textbf{Description} \\
+\midrule
+\verb|\LaTeX|   & Produces the \LaTeX{} logo with proper kerning and raised ``A''. \\
+\verb|\TeX|     & Produces the \TeX{} logo. \\
+\verb|\today|   & Produces the current date. \\
+\verb|\tableofcontents| & Generates the table of contents from sectioning commands. \\
+\bottomrule
+\end{tabularx}
+\caption{tabularx with auto-wrapping X column}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Multi-page Tables (longtable)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=longtable]
+\usepackage{longtable}
+
+\begin{longtable}{lcc}
+    \caption{A long table spanning multiple pages} \\
+    \toprule
+    Name & Value & Note \\
+    \midrule
+    \endfirsthead
+
+    \toprule
+    Name & Value & Note \\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{3}{r}{\textit{Continued on next page}} \\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    Data1 & 100 & Note1 \\
+    Data2 & 200 & Note2 \\
+    % ... many more rows ...
+\end{longtable}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Table Placement (Float)}
+
+Tables inside \texttt{table} environment are \emph{floating bodies}:
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Float placement specifiers]
+\begin{table}[placement]
+    % placement can be:
+    % h = here       (approximately at current location)
+    % t = top        (top of page)
+    % b = bottom     (bottom of page)
+    % p = page       (on a separate float page)
+    % ! = override   (relax LaTeX's internal rules)
+    % H = HERE       (requires float package -- exact placement)
+    \centering
+    \begin{tabular}{lc}
+        ...
+    \end{tabular}
+    \caption{Table caption}
+    \label{tab:mylabel}
+\end{table}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Colored Tables}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Colored table rows]
+\usepackage[table]{xcolor}
+
+\rowcolor{gray!20}       % Color entire row
+\cellcolor{blue!25}       % Color single cell
+\columncolor{green!15}    % Color entire column (in column spec)
+\end{lstlisting}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\rowcolor{blue!15}
+\textbf{Header 1} & \textbf{Header 2} & \textbf{Header 3} \\
+\midrule
+Row 1, Col 1 & Row 1, Col 2 & Row 1, Col 3 \\
+\rowcolor{gray!10}
+Row 2, Col 1 & Row 2, Col 2 & Row 2, Col 3 \\
+Row 3, Col 1 & Row 3, Col 2 & Row 3, Col 3 \\
+\rowcolor{gray!10}
+Row 4, Col 1 & Row 4, Col 2 & Row 4, Col 3 \\
+\bottomrule
+\end{tabular}
+\caption{Alternating row colors}
+\end{table}
+
+% ------------------------------------------------------------------
+\section{Table Quick Reference}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Symbol/Command} & \textbf{Meaning} \\
+\midrule
+\verb|&|               & Column separator \\
+\verb|\\|              & Row terminator \\
+\verb|\hline|          & Full horizontal line \\
+\verb|\cline{a-b}|     & Partial horizontal line \\
+\verb|\vline|          & Vertical line (inline) \\
+\verb|\multicolumn{n}{spec}{text}| & Span $n$ columns \\
+\verb|\multirow{n}{w}{text}| & Span $n$ rows \\
+\verb|\toprule|        & booktabs top rule \\
+\verb|\midrule|        & booktabs middle rule \\
+\verb|\bottomrule|     & booktabs bottom rule \\
+\bottomrule
+\end{tabular}
+\caption{Table syntax quick reference}
+\end{table}

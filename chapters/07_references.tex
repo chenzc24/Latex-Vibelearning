@@ -1,0 +1,140 @@
+% =============================================================================
+%  CHAPTER 7: Cross References & Hyperlinks
+% =============================================================================
+
+\chapter{Cross References \& Hyperlinks}
+
+\section{Labels and References}
+
+\latex{} provides a powerful cross-referencing system. Every numbered element can be labeled and referenced.
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Label and reference]
+% Step 1: Place a label after the numbered element
+\section{Introduction}
+\label{sec:intro}
+
+\begin{equation}
+    E = mc^2
+    \label{eq:einstein}
+\end{equation}
+
+\begin{figure}[htbp]
+    \caption{My figure}
+    \label{fig:myfig}
+\end{figure}
+
+\begin{table}[htbp]
+    \caption{My table}
+    \label{tab:mytab}
+\end{table}
+
+% Step 2: Reference it in text
+As discussed in Section~\ref{sec:intro}...
+Equation~\ref{eq:einstein} shows...
+See Figure~\ref{fig:myfig} and Table~\ref{tab:mytab}.
+\end{lstlisting}
+
+\subsection{Label Naming Conventions}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Element} & \textbf{Prefix} & \textbf{Example} \\
+\midrule
+Chapter    & \texttt{ch:}  & \texttt{ch:intro} \\
+Section    & \texttt{sec:} & \texttt{sec:methods} \\
+Subsection & \texttt{ssec:} & \texttt{ssec:data} \\
+Figure     & \texttt{fig:} & \texttt{fig:diagram} \\
+Table      & \texttt{tab:} & \texttt{tab:results} \\
+Equation   & \texttt{eq:}  & \texttt{eq:euler} \\
+Listing    & \texttt{lst:} & \texttt{lst:python} \\
+Item       & \texttt{itm:} & \texttt{itm:first} \\
+\bottomrule
+\end{tabular}
+\caption{Recommended label prefixes}
+\end{table}
+
+\subsection{Pageref and Nameref}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Other reference commands]
+% Reference the page number:
+See page~\pageref{sec:intro}.
+
+% Reference the title/name:
+Section~\nameref{sec:intro} discusses...
+
+% Reference both name and page with autoref (hyperref):
+\autoref{sec:intro}  % Produces "Section 1"
+\autoref{fig:myfig}  % Produces "Figure 1"
+\autoref{eq:einstein}% Produces "Equation 1"
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Hyperlinks (hyperref package)}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Hyperlinks]
+\usepackage{hyperref}
+
+% URL links:
+\url{https://www.latex-project.org/}
+\href{https://www.latex-project.org/}{LaTeX Project}
+
+% Email link:
+\href{mailto:user@example.com}{user@example.com}
+
+% File link:
+\href{file:///path/to/file}{Open file}
+
+% Internal link (jump to label):
+\hyperref[sec:intro]{Go to Introduction}
+
+% Configuration:
+\hypersetup{
+    colorlinks=true,       % Colored links (not boxed)
+    linkcolor=blue,        % Internal link color
+    filecolor=magenta,     % File link color
+    urlcolor=cyan,         % URL color
+    citecolor=green,       % Citation color
+}
+\end{lstlisting}
+
+Examples:
+\begin{itemize}
+    \item URL: \url{https://www.latex-project.org/}
+    \item Hyperlinked text: \href{https://www.overleaf.com/}{Overleaf --- Online LaTeX Editor}
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section{Table of Contents}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Table of contents]
+% Basic table of contents:
+\tableofcontents
+
+% List of figures:
+\listoffigures
+
+% List of tables:
+\listoftables
+
+% Limit TOC depth:
+\setcounter{tocdepth}{2}  % Show up to subsection
+
+% Set sectioning number depth:
+\setcounter{secnumdepth}{3}  % Number up to subsubsection
+
+% Add unnumbered section to TOC:
+\section*{Acknowledgments}
+\addcontentsline{toc}{section}{Acknowledgments}
+\end{lstlisting}
+
+\subsection{Custom TOC Entry}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Custom TOC entries]
+% Add arbitrary entries to TOC:
+\addcontentsline{toc}{chapter}{Preface}
+
+% For the list of figures/tables:
+\addcontentsline{lof}{figure}{My Figure Title}
+\end{lstlisting}

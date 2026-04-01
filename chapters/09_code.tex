@@ -1,0 +1,184 @@
+% =============================================================================
+%  CHAPTER 9: Code Listings & Verbatim
+% =============================================================================
+
+\chapter{Code Listings \& Verbatim Text}
+
+\section{Verbatim Text}
+
+The \texttt{verbatim} environment prints text exactly as typed, without interpreting any \latex{} commands.
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Verbatim environments]
+% Inline verbatim:
+\verb|This is \verbatim{test} text|
+
+% Display verbatim:
+\begin{verbatim}
+    \textbf{This text is NOT bold}
+    $E = mc^2$ is NOT an equation
+    Everything appears exactly as typed!
+\end{verbatim}
+
+% Verbatim with different delimiter:
+\verb!Special chars: $ % & # _ { }!
+
+% With fancyvrb package (more options):
+\usepackage{fancyvrb}
+\begin{Verbatim}[fontsize=\small, frame=single, framesep=2mm]
+    Custom verbatim with frame and smaller font
+\end{Verbatim}
+\end{lstlisting}
+
+\subsection{Inline Verbatim Examples}
+
+\begin{itemize}
+    \item \verb|\documentclass{article}| — the document class command
+    \item \verb|\usepackage{graphicx}| — loading a package
+    \item \verb|$E = mc^2$| — inline math
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section{Code Listings (listings package)}
+
+The \texttt{listings} package provides sophisticated source code formatting.
+
+\subsection{Basic Listing}
+
+\begin{lstlisting}[language=Python, caption=Basic code listing]
+def hello_world():
+    print("Hello, World!")
+\end{lstlisting}
+
+\subsection{Listing with Language}
+
+\begin{lstlisting}[language=Python, caption=Python example with syntax highlighting]
+# Python example: Fibonacci sequence
+def fibonacci(n):
+    """Calculate the nth Fibonacci number."""
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+# Generate first 10 Fibonacci numbers
+for i in range(10):
+    print(f"F({i}) = {fibonacci(i)}")
+\end{lstlisting}
+
+\subsection{Java Example}
+
+\begin{lstlisting}[language=Java, caption=Java example]
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+
+        // Loop example
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Iteration: " + i);
+        }
+    }
+}
+\end{lstlisting}
+
+\subsection{C/C++ Example}
+
+\begin{lstlisting}[language=C++, caption=C++ example]
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> numbers = {5, 2, 8, 1, 9, 3};
+
+    // Sort ascending
+    std::sort(numbers.begin(), numbers.end());
+
+    // Print sorted vector
+    for (const auto& n : numbers) {
+        std::cout << n << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{JavaScript Example}
+
+\begin{lstlisting}[language=Java, caption=JavaScript example]
+// Asynchronous data fetching
+async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Listing Styles and Configuration}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Listing configuration]
+% Global settings in preamble:
+\lstset{
+    basicstyle=\ttfamily\small,          % Base font
+    keywordstyle=\color{blue}\bfseries,  % Keywords
+    commentstyle=\color{green!50!black}\itshape, % Comments
+    stringstyle=\color{red!70!black},    % Strings
+    numbers=left,                        % Line numbers
+    numberstyle=\tiny\color{gray},       % Line number style
+    stepnumber=1,                        % Line number step
+    numbersep=5pt,                       % Distance of numbers
+    backgroundcolor=\color{gray!5},      % Background color
+    frame=single,                        % Border frame
+    rulecolor=\color{gray!50},           % Frame color
+    breaklines=true,                     % Auto line break
+    breakatwhitespace=false,             % Break only at whitespace
+    tabsize=4,                           % Tab size
+    showstringspaces=false,              % Don't show string spaces
+    captionpos=b,                        % Caption at bottom
+    title=\lstname,                      % Show filename as title
+}
+\end{lstlisting}
+
+\note{Per-listing options go in square brackets: \texttt{\textbackslash begin\{lstlisting\}[language=Python, caption=\{...\}]}.}
+
+% ------------------------------------------------------------------
+\section{Inline Code}
+
+\begin{lstlisting}[language={[LaTeX]TeX}, caption=Inline code]
+% Use \lstinline for inline code:
+The function \lstinline|print("hello")| outputs text.
+
+% Short form (define a shorthand):
+\lstMakeShortInline[language=Python]{|}
+Use |print("hello")| in your code.
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\section{Supported Languages}
+
+The listings package supports many programming languages:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{Language} & \textbf{Keyword} & \textbf{Language} & \textbf{Keyword} \\
+\midrule
+Python     & \texttt{Python}        & Java      & \texttt{Java} \\
+C          & \texttt{C}             & C++       & \texttt{C++} \\
+JavaScript & \texttt{Java}          & HTML      & \texttt{HTML} \\
+SQL        & \texttt{SQL}           & R         & \texttt{R} \\
+MATLAB     & \texttt{Matlab}        & Fortran   & \texttt{Fortran} \\
+Bash       & \texttt{bash}          & XML       & \texttt{XML} \\
+LaTeX      & \texttt{[LaTeX]TeX}    & Make      & \texttt{make} \\
+\bottomrule
+\end{tabular}
+\caption{Some supported languages in the listings package}
+\end{table}
