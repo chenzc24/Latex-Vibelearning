@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.31)  1 APR 2026 22:16
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.3.31)  1 APR 2026 22:47
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **./main.tex
 (main.tex
@@ -11,15 +12,15 @@ Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
 (D:\Miktex\tex/latex/base\size12.clo
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count275
-\c@chapter=\count276
-\c@section=\count277
-\c@subsection=\count278
-\c@subsubsection=\count279
-\c@paragraph=\count280
-\c@subparagraph=\count281
-\c@figure=\count282
-\c@table=\count283
+\c@part=\count271
+\c@chapter=\count272
+\c@section=\count273
+\c@subsection=\count274
+\c@subsubsection=\count275
+\c@paragraph=\count276
+\c@subparagraph=\count277
+\c@figure=\count278
+\c@table=\count279
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
@@ -27,10 +28,17 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-)
-(D:\Miktex\tex/latex/base\fontenc.sty
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (D:\Miktex\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+6.
+ (D:\Miktex\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
 (D:\Miktex\tex/latex/geometry\geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
 
@@ -43,9 +51,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (D:\Miktex\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count284
-\Gm@cntv=\count285
-\c@Gm@tempcnt=\count286
+\Gm@cnth=\count280
+\Gm@cntv=\count281
+\c@Gm@tempcnt=\count282
 \Gm@bindingoffset=\dimen149
 \Gm@wd@mp=\dimen150
 \Gm@odd@mp=\dimen151
@@ -68,10 +76,10 @@ Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 (D:\Miktex\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 106.
+Package graphics Info: Driver file: xetex.def on input line 106.
 
-(D:\Miktex\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+(D:\Miktex\tex/latex/graphics-def\xetex.def
+File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen157
 \Gin@req@width=\dimen158
@@ -117,30 +125,35 @@ Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@yd=\dimen170
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count287
-\c@pgf@countb=\count288
-\c@pgf@countc=\count289
-\c@pgf@countd=\count290
+\c@pgf@counta=\count283
+\c@pgf@countb=\count284
+\c@pgf@countc=\count285
+\c@pgf@countd=\count286
 \t@pgf@toka=\toks25
 \t@pgf@tokb=\toks26
 \t@pgf@tokc=\toks27
-\pgf@sys@id@count=\count291
+\pgf@sys@id@count=\count287
 
 (D:\Miktex\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
-Driver file for pgf: pgfsys-pdftex.def
+Driver file for pgf: pgfsys-xetex.def
 
-(D:\Miktex\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
-File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+(D:\Miktex\tex/generic/pgf/systemlayer\pgfsys-xetex.def
+File: pgfsys-xetex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\Miktex\tex/generic/pgf/systemlayer\pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
 
 (D:\Miktex\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)
+\pgfsys@objnum=\count288
 )))
 (D:\Miktex\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count292
-\pgfsyssoftpath@bigbuffer@items=\count293
+\pgfsyssoftpath@smallbuffer@items=\count289
+\pgfsyssoftpath@bigbuffer@items=\count290
 )
 (D:\Miktex\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -151,11 +164,10 @@ Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 (D:\Miktex\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 274.
+Package xcolor Info: Driver file: xetex.def on input line 274.
 
 (D:\Miktex\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
@@ -171,7 +183,7 @@ Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 (D:\Miktex\tex/generic/pgf/math\pgfmathutil.code.tex)
 (D:\Miktex\tex/generic/pgf/math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen171
-\pgfmath@count=\count294
+\pgfmath@count=\count291
 \pgfmath@box=\box54
 \pgfmath@toks=\toks28
 \pgfmath@stack@operand=\toks29
@@ -188,7 +200,7 @@ Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 (D:\Miktex\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex)
 (D:\Miktex\tex/generic/pgf/math\pgfmathcalc.code.tex)
 (D:\Miktex\tex/generic/pgf/math\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count295
+\c@pgfmathroundto@lastzeros=\count292
 ))
 (D:\Miktex\tex/generic/pgf/math\pgfint.code.tex)
 (D:\Miktex\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
@@ -223,7 +235,7 @@ File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box55
 \pgf@hbox=\box56
 \pgf@layerbox@main=\box57
-\pgf@picture@serial@count=\count296
+\pgf@picture@serial@count=\count293
 )
 (D:\Miktex\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -251,8 +263,8 @@ File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (D:\Miktex\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@max=\dimen195
-\pgf@sys@shading@range@num=\count297
-\pgf@shadingcount=\count298
+\pgf@sys@shading@range@num=\count294
+\pgf@shadingcount=\count295
 )
 (D:\Miktex\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -305,7 +317,7 @@ Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 
 (D:\Miktex\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count299
+\pgf@plot@mark@count=\count296
 \pgfplotmarksize=\dimen256
 )
 \tikz@lastx=\dimen257
@@ -320,18 +332,18 @@ File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikz@figbox@bg=\box61
 \tikz@tempbox=\box62
 \tikz@tempbox@bg=\box63
-\tikztreelevel=\count300
-\tikznumberofchildren=\count301
-\tikznumberofcurrentchild=\count302
-\tikz@fig@count=\count303
+\tikztreelevel=\count297
+\tikznumberofchildren=\count298
+\tikznumberofcurrentchild=\count299
+\tikz@fig@count=\count300
 
 (D:\Miktex\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count304
-\pgfmatrixcurrentcolumn=\count305
-\pgf@matrix@numberofcolumns=\count306
+\pgfmatrixcurrentrow=\count301
+\pgfmatrixcurrentcolumn=\count302
+\pgf@matrix@numberofcolumns=\count303
 )
-\tikz@expandcount=\count307
+\tikz@expandcount=\count304
 
 (D:\Miktex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code
 .tex
@@ -364,8 +376,8 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 \t@pgfplots@tokb=\toks34
 \t@pgfplots@tokc=\toks35
 \pgfplots@tmpa=\dimen269
-\c@pgfplots@coordindex=\count308
-\c@pgfplots@scanlineindex=\count309
+\c@pgfplots@coordindex=\count305
+\c@pgfplots@scanlineindex=\count306
 
 (D:\Miktex\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex))
 (D:\Miktex\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex)
@@ -381,11 +393,11 @@ n-lists.tex)) (D:\Miktex\tex/generic/pgfplots/util\pgfplotsutil.code.tex
 (D:\Miktex\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex)
 (D:\Miktex\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex
 ) (D:\Miktex\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count310
+\c@pgfplotsarray@tmp=\count307
 )
 (D:\Miktex\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex)
 (D:\Miktex\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count311
+\c@pgfplotstable@counta=\count308
 \t@pgfplotstable@a=\toks39
 )
 (D:\Miktex\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex)
@@ -393,10 +405,14 @@ n-lists.tex)) (D:\Miktex\tex/generic/pgfplots/util\pgfplotsutil.code.tex
 (D:\Miktex\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex))
 (D:\Miktex\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex)
 (D:\Miktex\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count312
+\c@pgfplotslibrarysurf@no=\count309
 
-(D:\Miktex\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdfte
-x.def))) (D:\Miktex\tex/generic/pgfplots/util\pgfplotscolormap.code.tex
+(D:\Miktex\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-xetex
+.def
+(D:\Miktex\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-dvipd
+fmx.def
+\c@pgfplotslibrarysurf@streamlen=\count310
+)))) (D:\Miktex\tex/generic/pgfplots/util\pgfplotscolormap.code.tex
 (D:\Miktex\tex/generic/pgfplots/util\pgfplotscolor.code.tex))
 (D:\Miktex\tex/generic/pgfplots\pgfplotsstackedplots.code.tex)
 (D:\Miktex\tex/generic/pgfplots\pgfplotsplothandlers.code.tex
@@ -415,7 +431,7 @@ code.tex (D:\Miktex\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen272
 \pgfdecoratedinputsegmentremainingdistance=\dimen273
 \pgf@decorate@distancetomove=\dimen274
-\pgf@decorate@repeatstate=\count313
+\pgf@decorate@repeatstate=\count311
 \pgfdecorationsegmentamplitude=\dimen275
 \pgfdecorationsegmentlength=\dimen276
 )
@@ -430,7 +446,7 @@ pathreplacing.code.tex
 (D:\Miktex\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathrepl
 acing.code.tex))
 (D:\Miktex\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count314
+\pgfplots@numplots=\count312
 \pgfplots@xmin@reg=\dimen277
 \pgfplots@xmax@reg=\dimen278
 \pgfplots@ymin@reg=\dimen279
@@ -464,14 +480,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (D:\Miktex\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count315
+\inf@bad=\count313
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count316
-\leftroot@=\count317
+\uproot@=\count314
+\leftroot@=\count315
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count318
-\DOTSCASE@=\count319
+\classnum@=\count316
+\DOTSCASE@=\count317
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -484,20 +500,20 @@ LaTeX Info: Redefining \Bigg on input line 724.
 \big@size=\dimen285
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count320
+\macc@depth=\count318
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count321
+\c@MaxMatrixCols=\count319
 \dotsspace@=\muskip17
-\c@parentequation=\count322
-\dspbrk@lvl=\count323
+\c@parentequation=\count320
+\dspbrk@lvl=\count321
 \tag@help=\toks41
-\row@=\count324
-\column@=\count325
-\maxfields@=\count326
+\row@=\count322
+\column@=\count323
+\maxfields@=\count324
 \andhelp@=\toks42
 \eqnshift@=\dimen286
 \alignsep@=\dimen287
@@ -547,12 +563,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen299
 \cmidrulekern=\dimen300
 \defaultaddspace=\dimen301
-\@cmidla=\count327
-\@cmidlb=\count328
+\@cmidla=\count325
+\@cmidlb=\count326
 \@aboverulesep=\dimen302
 \@belowrulesep=\dimen303
-\@thisruleclass=\count329
-\@lastruleclass=\count330
+\@thisruleclass=\count327
+\@lastruleclass=\count328
 \@thisrulewidth=\dimen304
 )
 (D:\Miktex\tex/latex/tools\array.sty
@@ -570,22 +586,22 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTright=\skip60
 \LTpre=\skip61
 \LTpost=\skip62
-\LTchunksize=\count331
+\LTchunksize=\count329
 \LTcapwidth=\dimen307
 \LT@head=\box69
 \LT@firsthead=\box70
 \LT@foot=\box71
 \LT@lastfoot=\box72
 \LT@gbox=\box73
-\LT@cols=\count332
-\LT@rows=\count333
-\c@LT@tables=\count334
-\c@LT@chunks=\count335
+\LT@cols=\count330
+\LT@rows=\count331
+\c@LT@tables=\count332
+\c@LT@chunks=\count333
 \LT@p@ftn=\toks52
 ) (D:\Miktex\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip63
-\multirow@cntb=\count336
+\multirow@cntb=\count334
 \multirow@dima=\skip64
 \bigstrutjot=\dimen308
 )
@@ -596,11 +612,11 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@old@col=\dimen311
 \TX@target=\dimen312
 \TX@delta=\dimen313
-\TX@cols=\count337
+\TX@cols=\count335
 \TX@ftn=\toks53
 ) (D:\Miktex\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count338
+\c@float@type=\count336
 \float@exts=\toks54
 \float@box=\box74
 \@float@everytoks=\toks55
@@ -621,8 +637,8 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@hangindent=\dimen321
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count339
-\c@continuedfloat=\count340
+\c@caption@flags=\count337
+\c@continuedfloat=\count338
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -632,15 +648,15 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 (D:\Miktex\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count341
+\c@subfigure=\count339
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count342
+\c@subtable=\count340
 )
 (D:\Miktex\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 \everycr=\toks56
 \minrowclearance=\skip65
-\rownum=\count343
+\rownum=\count341
 )
 (D:\Miktex\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
@@ -648,8 +664,8 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@outerparindent=\dimen322
 \enit@toks=\toks57
 \enit@inbox=\box76
-\enit@count@id=\count344
-\enitdp@description=\count345
+\enit@count@id=\count342
+\enitdp@description=\count343
 )
 (D:\Miktex\tex/latex/parskip\parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
@@ -665,23 +681,23 @@ Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
 (D:\Miktex\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count346
+\etb@tempcnta=\count344
 ))
 (D:\Miktex\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 )
 (D:\Miktex\tex/latex/listings\listings.sty
-\lst@mode=\count347
+\lst@mode=\count345
 \lst@gtempboxa=\box77
 \lst@token=\toks58
-\lst@length=\count348
+\lst@length=\count346
 \lst@currlwidth=\dimen323
-\lst@column=\count349
-\lst@pos=\count350
+\lst@column=\count347
+\lst@pos=\count348
 \lst@lostspace=\dimen324
 \lst@width=\dimen325
-\lst@newlines=\count351
-\lst@lineno=\count352
+\lst@newlines=\count349
+\lst@lineno=\count350
 \lst@maxwidth=\dimen326
 
 (D:\Miktex\tex/latex/listings\lstpatch.sty
@@ -689,8 +705,8 @@ File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (D:\Miktex\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count353
-\lst@skipnumbers=\count354
+\c@lstnumber=\count351
+\lst@skipnumbers=\count352
 \lst@framebox=\box78
 )
 (D:\Miktex\tex/latex/listings\listings.cfg
@@ -706,11 +722,11 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
 (D:\Miktex\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count355
+\FV@CodeLineNo=\count353
 \FV@InFile=\read3
 \FV@TabBox=\box79
-\c@FancyVerbLine=\count356
-\FV@StepNumber=\count357
+\c@FancyVerbLine=\count354
+\FV@StepNumber=\count355
 \FV@OutFile=\write4
 )
 (D:\Miktex\tex/latex/hyperref\hyperref.sty
@@ -731,7 +747,7 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode not found.
 ))
 (D:\Miktex\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
@@ -745,30 +761,26 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (D:\Miktex\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count358
+\c@section@level=\count356
 )
 (D:\Miktex\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen327
-\Hy@linkcounter=\count359
-\Hy@pagecounter=\count360
+\Hy@linkcounter=\count357
+\Hy@pagecounter=\count358
 
 (D:\Miktex\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
 )
 (D:\Miktex\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count361
+\Hy@SavedSpaceFactor=\count359
 
 (D:\Miktex\tex/latex/hyperref\puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
-Now handling font encoding PU ...
-... no UTF-8 mapping file for font encoding PU
 )
 Package hyperref Info: Hyper figures OFF on input line 4201.
 Package hyperref Info: Link nesting OFF on input line 4206.
@@ -777,7 +789,7 @@ Package hyperref Info: Plain pages OFF on input line 4216.
 Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
-\c@Hy@tempcnt=\count362
+\c@Hy@tempcnt=\count360
  (D:\Miktex\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -792,7 +804,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count363
+\Fld@menulength=\count361
 \Field@Width=\dimen329
 \Fld@charsize=\dimen330
 Package hyperref Info: Hyper figures OFF on input line 6084.
@@ -802,14 +814,17 @@ Package hyperref Info: backreferencing OFF on input line 6099.
 Package hyperref Info: Link coloring OFF on input line 6104.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
-\Hy@abspage=\count364
-\c@Item=\count365
-\c@Hfootnote=\count366
+\Hy@abspage=\count362
+\c@Item=\count363
+\c@Hfootnote=\count364
 )
-Package hyperref Info: Driver (autodetected): hpdftex.
+Package hyperref Info: Driver (autodetected): hxetex.
 
-(D:\Miktex\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
+(D:\Miktex\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2026-01-29 v7.01p Hyperref driver for XeTeX
+\pdfm@box=\box80
+\c@Hy@AnnotLevel=\count365
+\HyField@AnnotCount=\count366
 \Fld@listcount=\count367
 \c@bookmark@seq@number=\count368
 
@@ -889,7 +904,7 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing
 
 ) (D:\Miktex\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box80
+\ttl@box=\box81
 \beforetitleunit=\skip116
 \aftertitleunit=\skip117
 \ttl@plus=\dimen331
@@ -924,30 +939,32 @@ Package: siunitx 2026-03-26 v3.5.1 A comprehensive (SI) units package
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
  (CN)
 )
-\l__siunitx_table_tmp_box=\box81
+\l__siunitx_table_tmp_box=\box82
 \l__siunitx_table_tmp_dim=\dimen336
 \l__siunitx_table_column_width_dim=\dimen337
-\l__siunitx_table_integer_box=\box82
-\l__siunitx_table_decimal_box=\box83
-\l__siunitx_table_uncert_box=\box84
-\l__siunitx_table_before_box=\box85
-\l__siunitx_table_after_box=\box86
+\l__siunitx_table_integer_box=\box83
+\l__siunitx_table_decimal_box=\box84
+\l__siunitx_table_uncert_box=\box85
+\l__siunitx_table_before_box=\box86
+\l__siunitx_table_after_box=\box87
 \l__siunitx_table_before_dim=\dimen338
 \l__siunitx_table_carry_dim=\dimen339
 \l__siunitx_unit_tmp_int=\count386
 \l__siunitx_unit_position_int=\count387
 \l__siunitx_unit_total_int=\count388
 \l__siunitx_sexagesimal_tmp_dim=\dimen340
-\l__siunitx_sexagesimal_marker_box=\box87
-\l__siunitx_sexagesimal_unit_box=\box88
+\l__siunitx_sexagesimal_marker_box=\box88
+\l__siunitx_sexagesimal_unit_box=\box89
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 95.
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 144.
 
-(D:\Miktex\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count389
+(D:\Miktex\tex/latex/l3backend\l3backend-xetex.def
+File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
+\g__graphics_track_int=\count389
+\g__pdfannot_backend_int=\count390
+\g__pdfannot_backend_link_int=\count391
 ) (main.aux)
 \openout1 = `main.aux'.
 
@@ -961,6 +978,8 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
 LaTeX Font Info:    ... okay on input line 144.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 144.
 LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
 LaTeX Font Info:    ... okay on input line 144.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
@@ -971,9 +990,9 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 144.
 LaTeX Font Info:    ... okay on input line 144.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: xetex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1004,27 +1023,6 @@ LaTeX Font Info:    ... okay on input line 144.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(D:\Miktex\tex/context/base/mkii\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count390
-\scratchdimen=\dimen341
-\scratchbox=\box89
-\nofMPsegments=\count391
-\nofMParguments=\count392
-\everyMPshowfont=\toks61
-\MPscratchCnt=\count393
-\MPscratchDim=\dimen342
-\MPnumerator=\count394
-\makeMPintoPDFobject=\count395
-\everyMPtoPDFconversion=\toks62
-) (D:\Miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(D:\Miktex\tex/latex/00miktex\epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -1032,11 +1030,15 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count396
+\c@lstlisting=\count392
 Package hyperref Info: Link coloring ON on input line 144.
 (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
+
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 (D:\Miktex\tex/latex/translations/dicts\translations-basic-dictionary-english.t
@@ -1046,11 +1048,8 @@ nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
 or `english'. on input line 144.
-<example-image-a.pdf, id=682, 321.2pt x 240.9pt>
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 148.
-(pdftex.def)             Requested size: 136.57462pt x 102.43443pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 148
 .
  (D:\Miktex\tex/latex/amsfonts\umsa.fd
@@ -1063,21 +1062,23 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 148
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/90590/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <D:/Miktex/te
-x/latex/mwe/example-image-a.pdf>]
-(main.toc
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.39 ....1}Basic Table (tabular)}{20}{section.4.1}
-                                                  % [1] [2] [3])
+] (main.toc [1]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+5.
+
+(D:\Miktex\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2] [3])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
  [4]
 (chapters/01_document_structure.tex
 Chapter 1.
+Missing character: There is no — in font ec-lmr12!
+Missing character: There is no — in font ec-lmr12!
+Missing character: There is no — in font ec-lmr12!
+Missing character: There is no — in font ec-lmr12!
 [5
 
 ] (D:\Miktex\tex/latex/listings\lstlang1.sty
@@ -1112,14 +1113,23 @@ File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 65.
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 66.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 66.
  [6]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 123.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 123.
  [7])
 (chapters/02_text_formatting.tex [8]
 Chapter 2.
+Missing character: There is no — in font ec-lmr12!
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
+1.
+(D:\Miktex\tex/latex/lm\t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Missing character: There is no — in font ec-lmr12!
+Missing character: There is no — in font ec-lmr12!
+Missing character: There is no — in font ec-lmr12!
 [9
 
 ] [10] [11] [12] [13]) (chapters/03_lists.tex [14]
@@ -1131,8 +1141,8 @@ Chapter 4.
 [20
 
 ] [21]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 127.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 127.
  [22]
 
 LaTeX Warning: \verb may be unreliable inside tabularx on input line 201.
@@ -1142,28 +1152,20 @@ Chapter 5.
 [26
 
 ] [27] [28] [29] [30] [31] [32]
-\c@theorem=\count397
-\c@definition=\count398
+\c@theorem=\count393
+\c@definition=\count394
 ) (chapters/06_figures.tex [33]
 Chapter 6.
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 29.
-(pdftex.def)             Requested size: 182.09486pt x 136.57558pt.
 [34
 
 ]
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 88.
-(pdftex.def)             Requested size: 182.09486pt x 136.57558pt.
-<example-image-b.pdf, id=1575, 321.2pt x 240.9pt>
 File: example-image-b.pdf Graphic file (type pdf)
 <use example-image-b.pdf>
-Package pdftex.def Info: example-image-b.pdf  used on input line 94.
-(pdftex.def)             Requested size: 182.09486pt x 136.57558pt.
- [35]) [36 <D:/Miktex/tex/latex/mwe/example-image-b.pdf>]
-(chapters/07_references.tex [37]
+ [35] [36]) (chapters/07_references.tex [37]
 Chapter 7.
 [38
 
@@ -1175,6 +1177,9 @@ Chapter 8.
 
 ]
 Chapter 9.
+Missing character: There is no — in font ec-lmr12!
+Missing character: There is no — in font ec-lmr12!
+Missing character: There is no — in font ec-lmr12!
 [47
 
 ] (D:\Miktex\tex/latex/listings\lstlang1.sty
@@ -1192,8 +1197,8 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 (D:\Miktex\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 ) [48] [49]
-Overfull \hbox (1.4027pt too wide) in paragraph at lines 149--150
-[]\T1/cmr/m/it/12 Note: Per-listing op-tions go in square brack-ets: \T1/cmtt/m
+Overfull \hbox (5.88817pt too wide) in paragraph at lines 149--150
+[]\T1/lmr/m/it/12 Note: Per-listing op-tions go in square brack-ets: \T1/lmtt/m
 /it/12 \begin{lstlisting}[language=Python,
  []
 
@@ -1218,21 +1223,25 @@ Chapter 12.
 ] [61]) (chapters/13_packages.tex [62]
 Chapter 13.
 
-Overfull \hbox (6.58754pt too wide) in paragraph at lines 20--21
-[]\T1/cmr/m/it/12 Note: Pack-ages must be loaded in the pream-ble (be-fore \T1/
-cmtt/m/it/12 \begin{document}\T1/cmr/m/it/12 ). Load \T1/cmtt/m/it/12 hyperref
+Overfull \hbox (9.69926pt too wide) in paragraph at lines 20--21
+[]\T1/lmr/m/it/12 Note: Pack-ages must be loaded in the pream-ble (be-fore \T1/
+lmtt/m/it/12 \begin{document}\T1/lmr/m/it/12 ). Load \T1/lmtt/m/it/12 hyperref
  []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 13.1 on input line 73.
 
 
 ignored: Infinite glue shrinkage found in box being split [63
 
 ] [64] [65]) (chapters/14_custom_commands.tex [66]
 Chapter 14.
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 7.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
 [67
 
-] [68] [69]) (chapters/15_advanced.tex [70] [71]
+] [68] [69] [70]) (chapters/15_advanced.tex [71]
 Chapter 15.
 [72
 
@@ -1240,7 +1249,11 @@ Chapter 15.
 Appendix A.
 [78
 
-] [79] [80]) [81] (main.aux)
+] [79] [80])
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+[81] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1249,54 +1262,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B5594BDE583674ABB8CE47E458BA4F55;27569.
  ) 
 Here is how much of TeX's memory you used:
- 47426 strings out of 467867
- 1046544 string characters out of 5435169
- 1884071 words of memory out of 5000000
- 73826 multiletter control sequences out of 15000+600000
- 657667 words of font info for 117 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 84i,19n,104p,1195b,2694s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
-1728.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ectt1440.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecbx0800.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecit1200.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm2488.pk> <C:\Users\90590\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk> <C:\Users\90590\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\90590\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\90590\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\90590\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\
-90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\
-Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk
-> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit1
-095.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\ectt1095.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
-dpi600\ecrm0600.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknapp
-en/ec/dpi600\ecbx1440.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/l
-jfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\90590\AppData\Local\MiKTeX\font
-s/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\90590\AppData\Local\MiKTe
-X\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\90590\AppData\Local
-\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\90590\AppData
-\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\90590\A
-ppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\9
-0590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\U
-sers\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk>
- <C:\Users\90590\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx24
-88.pk><D:/Miktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Miktex/fonts/typ
-e1/public/amsfonts/cm/cmmi12.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmmi
-6.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Miktex/fonts/type
-1/public/amsfonts/cm/cmr12.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmr6.p
-fb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Miktex/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-><D:/Miktex/fonts/type1/public/lm/lmss17.pfb><D:/Miktex/fonts/type1/public/amsf
-onts/symbols/msam10.pfb><D:/Miktex/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb>
-Output written on main.pdf (82 pages, 1012547 bytes).
-PDF statistics:
- 4167 PDF objects out of 4296 (max. 8388607)
- 1807 named destinations out of 2073 (max. 500000)
- 1381 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 44728 strings out of 402983
+ 1001155 string characters out of 5455727
+ 1830431 words of memory out of 5000000
+ 72827 multiletter control sequences out of 15000+600000
+ 705661 words of font info for 121 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 84i,18n,104p,1195b,2454s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
+Output written on main.pdf (82 pages).

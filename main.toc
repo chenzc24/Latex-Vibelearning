@@ -69,12 +69,12 @@
 \contentsline {section}{\numberline {5.17}Comprehensive Math Example}{33}{section.5.17}%
 \contentsline {chapter}{\numberline {6}Figures \& Images}{34}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Including Images (graphicx)}{34}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Figure Environment (Float)}{34}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Figure Environment (Float)}{35}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Referencing Figures}{35}{subsection.6.2.1}%
 \contentsline {section}{\numberline {6.3}Subfigures (subcaption package)}{35}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Image Size Options}{36}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Wrapping Text Around Images}{36}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Drawing Simple Graphics with TikZ (Preview)}{36}{section.6.6}%
+\contentsline {section}{\numberline {6.6}Drawing Simple Graphics with TikZ (Preview)}{37}{section.6.6}%
 \contentsline {chapter}{\numberline {7}Cross References \& Hyperlinks}{38}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Labels and References}{38}{section.7.1}%
 \contentsline {subsection}{\numberline {7.1.1}Label Naming Conventions}{39}{subsection.7.1.1}%
@@ -142,11 +142,11 @@
 \contentsline {subsection}{\numberline {14.1.1}Practical Examples}{67}{subsection.14.1.1}%
 \contentsline {section}{\numberline {14.2}Renaming Commands (\texttt {\textbackslash renewcommand})}{68}{section.14.2}%
 \contentsline {section}{\numberline {14.3}New Environments}{68}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Lengths and Counters}{68}{section.14.4}%
-\contentsline {subsection}{\numberline {14.4.1}Defining Lengths}{68}{subsection.14.4.1}%
+\contentsline {section}{\numberline {14.4}Lengths and Counters}{69}{section.14.4}%
+\contentsline {subsection}{\numberline {14.4.1}Defining Lengths}{69}{subsection.14.4.1}%
 \contentsline {subsection}{\numberline {14.4.2}Standard Lengths}{69}{subsection.14.4.2}%
 \contentsline {subsection}{\numberline {14.4.3}Counters}{69}{subsection.14.4.3}%
-\contentsline {section}{\numberline {14.5}Conditional Commands}{69}{section.14.5}%
+\contentsline {section}{\numberline {14.5}Conditional Commands}{70}{section.14.5}%
 \contentsline {section}{\numberline {14.6}Boxes}{70}{section.14.6}%
 \contentsline {chapter}{\numberline {15}Advanced Topics}{72}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Tables of Contents for Non-Standard Sections}{72}{section.15.1}%
